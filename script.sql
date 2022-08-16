@@ -33,13 +33,18 @@ create table if not exists loja_tenis.usuario (
     email varchar(150) NULL DEFAULT NULL,
     cpf varchar(11) NOT NULL,
     sexo varchar(1) NULL default NULL,
+    senha varchar(10) NOT NULL,
     primary key (idUsuario)
 );
 
 create table if not exists loja_tenis.categoria (
 	idCategoria INT NOT NULL auto_increment,
     nomeCategoria varchar(30) NOT NULL,
-    primary key (idCategoria)
+    idProduto INT NOT NULL,
+    primary key (idCategoria),
+        CONSTRAINT fk_Produto_Categoria
+		FOREIGN KEY (idProduto)
+        REFERENCES loja_tenis.produto (idProduto)
 );
 
 create table if not exists loja_tenis.adm (
@@ -67,12 +72,8 @@ create table if not exists loja_tenis.fornecedor (
 
 create table if not exists loja_tenis.pedido (
 	idPedido INT NOT NULL auto_increment,
-    idCategoria INT NOT NULL,
     idProduto INT NOT NULL,
     primary key (idPedido),
-    CONSTRAINT fk_Categoria_Pedido
-		FOREIGN KEY (idCategoria)
-        REFERENCES loja_tenis.categoria (idCategoria),
 	CONSTRAINT fk_Produto_Pedido
 		FOREIGN KEY (idProduto)
         REFERENCES loja_tenis.produto (idProduto)
