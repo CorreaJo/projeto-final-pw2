@@ -11,16 +11,16 @@ function select_tudo_adm(){
 }
 
 function select_where_adm(){
-    $select = "SELECT * FROM adm WHERE idAdm='$id'";
+    $select = "SELECT * FROM adm WHERE idAdm='$idAdm'";
     return $select;
 }
 
 function delete_adm(){
-    $delete = "DELETE FROM adm WHERE idAdm='$id'";
+    $delete = "DELETE FROM adm WHERE idAdm='$idAdm'";
     return $delete;
 }
 
 function update_adm(){
-    $update = "UPDATE adm SET nomeAdm='$nome', emailAdm='$email', senhaAdm='$senha'";
+    $update = "UPDATE adm SET nomeAdm='$nomeAdm', emailAdm='$emailAdm', senhaAdm=password('$senhaAdm)'";
     return $update;
 }

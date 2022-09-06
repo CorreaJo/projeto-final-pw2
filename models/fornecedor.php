@@ -11,16 +11,16 @@ function select_tudo_fornecedor(){
 }
 
 function select_where_fornecedor(){
-    $select = "SELECT * FROM fornecedor WHERE idFornecedor='$id'";
+    $select = "SELECT * FROM fornecedor WHERE idFornecedor='$idFornecedor'";
     return $select;
 }
 
 function delete_fornecedor(){
-    $delete = "DELETE FROM fornecedor WHERE idFornecedor='$id'";
+    $delete = "DELETE FROM fornecedor WHERE idFornecedor='$idFornecedor'";
     return $delete;
 }
 
-function update_adm(){
-    $update = "UPDATE fornecedor SET nomeFornecedor='$nome', CNPJ='$cnpj'";
+function update_fornecedor(){
+    $update = "UPDATE fornecedor SET nomeFornecedor='$nome', CNPJ='$cnpj' WHERE idFornecedor='$idFornecedor'";
     return $update;
 }

@@ -1,7 +1,7 @@
 <?php
 
 function insert_categoria(){
-    $insert = "INSERT INTO categoria (nomeCategoria) VALUES ('$nome')";
+    $insert = "INSERT INTO categoria (nomeCategoria) VALUES ('$nomeCategoria')";
     return $insert;
 }
 
@@ -11,16 +11,16 @@ function select_tudo_categoria(){
 }
 
 function select_where_adm(){
-    $select = "SELECT * FROM categoria WHERE idCategoria='$id'";
+    $select = "SELECT * FROM categoria WHERE idCategoria='$idCategoria'";
     return $select;
 }
 
 function delete_categoria(){
-    $delete = "DELETE FROM categoria WHERE idCategoria='$id'";
+    $delete = "DELETE FROM categoria WHERE idCategoria='$idCategoria'";
     return $delete;
 }
 
 function update_categoria(){
-    $update = "UPDATE categoria SET nomeCategoria='$nome'";
+    $update = "UPDATE categoria SET nomeCategoria='$nomeCategoria' WHERE idCategoria='$idCategoria'";
     return $update;
 }
