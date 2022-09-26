@@ -34,6 +34,7 @@
         <div id="seja-membro">
             <h2>Seja Membro</h2>
         </div>
+        <h1>DEPLOY</h1>
     </main>
     <footer>
 
