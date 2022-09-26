@@ -1,26 +1,26 @@
 <?php
 
-function insert_produto(){
+function NovoProduto(){
     $insert = "INSERT INTO produto (nome, cor, descricao, imagem, categoria, preco) VALUES ('$nome', '$cor', '$desc', '$imagem', '$categoria', '$preco')";
     return $insert;
 }
 
-function select_tudo_produto(){
+function ListarTudoProduto(){
     $select = "SELECT * FROM produto";
     return $select;
 }
 
-function select_where_produto(){
-    $select = "SELECT * FROM produto WHERE idProduto='$id'";
+function ListarProduto(){
+    $select = "SELECT * FROM produto WHERE idProduto='$idProduto'";
     return $select;
 }
 
-function delete_produto(){
-    $delete = "DELETE FROM produto WHERE idProduto='$id'";
+function DeleteProduto(){
+    $delete = "DELETE FROM produto WHERE idProduto='$idProduto'";
     return $delete;
 }
 
-function update_produto(){
+function AtualizarProduto(){
     $update = "UPDATE produto SET nome='$nome', cor='$cor', descricao='$desc', imagem='$img', categoria='$categoria', preco='$preco'";
     return $update;
 }

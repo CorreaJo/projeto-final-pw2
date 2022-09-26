@@ -10,7 +10,7 @@ function select_tudo_categoria(){
     return $select;
 }
 
-function select_where_adm(){
+function ListarCategoria(){
     $select = "SELECT * FROM categoria WHERE idCategoria='$idCategoria'";
     return $select;
 }
