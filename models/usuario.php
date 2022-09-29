@@ -1,7 +1,7 @@
 <?php
 
-function NovoUsuario(){
-    $insert = "INSERT INTO usuario (nome, endereco, telefone, email, cpf, sexo, senha) VALUES ('$nome', '$endereco', '$tel', '$email', '$cpf', '$sexo', password('$senha'))";
+function NovoUsuario($nome, $endereco, $tel, $email, $cpf, $sexo, $senha){
+    $insert = "INSERT INTO usuario (nome, endereco, telefone, email, cpf, sexo, senha) VALUES ('$nome', '$endereco', '$tel', '$email', '$cpf', '$sexo', '$senha')";
     return $insert;
 }
 
@@ -10,17 +10,17 @@ function ListarTudoUsuario(){
     return $select;
 }
 
-function ListarUsuario(){
+function ListarUsuario($idUsuario){
     $select = "SELECT * FROM usuario WHERE idUsuario='$idUsuario'";
     return $select;
 }
 
-function DeleteUsuario(){
+function DeleteUsuario($idUsuario){
     $delete = "DELETE FROM usuario WHERE idUsuario='$idUsuario'";
     return $delete;
 }
 
-function AtualizarPedido(){
-    $update = "UPDATE usuario SET nome='$nome', endereco='$endereco', telefone='$tel', email='$email', cpf='$cpf', sexo='$sexo', senha=password('$senha')";
+function AtualizarPedido($nome, $endereco, $tel, $email, $cpf, $sexo, $senha, $idUsuario){
+    $update = "UPDATE usuario SET nome='$nome', endereco='$endereco', telefone='$tel', email='$email', cpf='$cpf', sexo='$sexo', senha='$senha' WHERE idUsuario='$idUsuario'";
     return $update;
 }
