@@ -4,13 +4,13 @@ require "../../conexao.php";
 require "../../models/usuario.php";
 
 
-$nome = $_GET["nome"];
-$endereco = $_GET["endereco"];
-$tel = $_GET["telefone"];
-$email = $_GET["email"];
-$cpf = $_GET["cpf"];
-$sexo = $_GET["sexo"];
-$senha = $_GET["senha"];
+$nome = $_POST["nome"];
+$endereco = $_POST["endereco"];
+$tel = $_POST["telefone"];
+$email = $_POST["email"];
+$cpf = $_POST["cpf"];
+$sexo = $_POST["sexo"];
+$senha = $_POST["senha"];
 
 
 $con = conexao();

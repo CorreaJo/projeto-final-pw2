@@ -1,6 +1,6 @@
 <?php
 
-function NovoProduto(){
+function NovoProduto($nome, $cor, $desc, $imagem, $categoria, $preco){
     $insert = "INSERT INTO produto (nome, cor, descricao, imagem, categoria, preco) VALUES ('$nome', '$cor', '$desc', '$imagem', '$categoria', '$preco')";
     return $insert;
 }
@@ -10,17 +10,17 @@ function ListarTudoProduto(){
     return $select;
 }
 
-function ListarProduto(){
+function ListarProduto($idProduto){
     $select = "SELECT * FROM produto WHERE idProduto='$idProduto'";
     return $select;
 }
 
-function DeleteProduto(){
+function DeleteProduto($idProduto){
     $delete = "DELETE FROM produto WHERE idProduto='$idProduto'";
     return $delete;
 }
 
-function AtualizarProduto(){
-    $update = "UPDATE produto SET nome='$nome', cor='$cor', descricao='$desc', imagem='$img', categoria='$categoria', preco='$preco'";
+function AtualizarProduto($nome, $cor, $desc, $imagem, $categoria, $preco, $idProduto){
+    $update = "UPDATE produto SET nome='$nome', cor='$cor', descricao='$desc', imagem='$imagem', categoria='$categoria', preco='$preco' WHERE idProduto='$idProduto'";
     return $update;
 }

@@ -3,8 +3,10 @@
 require "../../conexao.php";
 require "../../models/usuario.php";
 
+$idUsuario = $_GET["idUsuario"];
+
 $con = conexao();
-$select = ListarTudoUsuario();
+$select = ListarUsuario($idUsuario);
 
 $resul = mysqli_query($con, $select);
 $linha = mysqli_fetch_assoc($resul)
@@ -21,7 +23,7 @@ $linha = mysqli_fetch_assoc($resul)
 </head>
 <body>
     <h1>Atualizar Conta</h1>
-    <form action="atualizarUsuario.php" method="GET">
+    <form action="atualizarUsuario.php" method="POST">
         <input type="text"  name="nome" placeholder="Seu nome" value="<?=$linha["nome"]?>">
         <input type="text" name="endereco" value="<?=$linha["endereco"]?>">
         <input type="tel" 

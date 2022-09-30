@@ -26,11 +26,7 @@ create table if not exists cordshoes.produto (
     imagem varchar(30) NULL DEFAULT NULL,
     categoria varchar(15) NULL DEFAULT NULL,
     preco decimal(9,2) NOT NULL,
-    idFornecedor INT NOT NULL,
-    primary key (idProduto),
-    CONSTRAINT fk_Fornecedor_Produto
-		FOREIGN KEY (idFornecedor)
-        REFERENCES cordshoes.fornecedor (idFornecedor)
+    primary key (idProduto)
 );
 
 create table if not exists cordshoes.usuario (

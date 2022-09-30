@@ -9,7 +9,7 @@
 <body>
     <h1>Cadastre-se</h1>
 
-    <form action="novoUsuario.php" method="GET">
+    <form action="novoUsuario.php" method="POST">
         <input type="text"  name="nome" placeholder="Seu nome">
         <input type="text" name="endereco">
         <input type="tel" 
