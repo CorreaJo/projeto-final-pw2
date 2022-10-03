@@ -35,8 +35,8 @@ create table if not exists cordshoes.usuario (
     endereco varchar(150) NOT NULL,
     telefone varchar(11) NULL DEFAULT NULL,
     email varchar(150) NULL DEFAULT NULL,
-    cpf varchar(11) NOT NULL,
-    sexo varchar(1) NULL default NULL,
+    cpf varchar(14) NOT NULL,
+    sexo varchar(25) NULL default NULL,
     senha varchar(10) NOT NULL,
     primary key (idUsuario)
 );
