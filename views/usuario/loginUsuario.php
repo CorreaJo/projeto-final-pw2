@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../../public/css/cadrastro.css">
 </head>
 <body>
-    <div class="cadastro">
+    <div class="cadastro login">
         <h1>Login</h1>
         <form action="testeUsuario.php" method="post">
             <input type="text" name="email" placeholder="Email">

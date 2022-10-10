@@ -1,10 +1,5 @@
 <?php
-session_start();
-if(!isset($_SESSION["email"]) and (!isset($_SESSION["senha"]))){
-    unset($_SESSION["email"]);
-    unset($_SESSION["senha"]);
-    header("location: ../index.php");
-}
+require "../../components/cabecalho.php";
 
 $logado = $_SESSION["email"];
 
@@ -30,11 +25,10 @@ $linha = mysqli_fetch_assoc($resul);
     <title><?=$linha["nome"]?></title>
 </head>
 <body>
-    <?php require "../../components/cabecalho.php"?>
     <img src="<?=$linha["imagem"]?>" alt="<?=$linha["nome"]?>">
     <h1><?=$linha["nome"]?></h1>
     <h3><?=$linha["endereco"]?></h3>
     <h2><?=$linha["email"]?></h2>
-    <a href="sairUsuario.php">Sair</a>
+    <a style="color: black;" href="sairUsuario.php">Sair</a>
 </body>
 </html>

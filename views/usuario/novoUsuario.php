@@ -23,7 +23,9 @@ $img = $to;
 $con = conexao();
 $insert = NovoUsuario($nome, $endereco, $tel, $email, $cpf, $sexo, $senha, $to);
 
-$query = mysqli_query($con, $insert);
+echo $insert;
+
+$query = mysqli_query($con, $insert) or die(mysqli_error($con));
 
 if($query) {
    ?>

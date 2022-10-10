@@ -1,7 +1,7 @@
 <?php
 
-function NovoProduto($nome, $cor, $desc, $imagem, $categoria, $preco){
-    $insert = "INSERT INTO produto (nome, cor, descricao, imagem, categoria, preco) VALUES ('$nome', '$cor', '$desc', '$imagem', '$categoria', '$preco')";
+function NovoProduto($nome, $cor, $desc, $categoria, $preco){
+    $insert = "INSERT INTO produto (nome, cor, descricao, categoria, preco) VALUES ('$nome', '$cor', '$desc', '$categoria', '$preco')";
     return $insert;
 }
 

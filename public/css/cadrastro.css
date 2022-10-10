@@ -5,13 +5,17 @@ body {
 .cadastro {
     width: 25%;
     margin: auto;
-    margin-top: 15%;
+    margin-top: 3%;
     border-radius: 10px;
     background-color: #C3DBC5;
     box-sizing: border-box;
     padding: 15px;
     box-shadow: 0px 0px 10px white;
     text-align: center;
+}
+
+.login {
+    margin-top: 10%;
 }
 
 h1 {

@@ -8,7 +8,23 @@
             <p>carrinho</p>
             <a href="../../../views/admin/usuarios/todosUsuarios.php">Ver usuarios</a>
             <a href="../../../views/funcionario/produto/produto.php">Ver Produtos</a>
-            <a href="../../../views/usuario/loginUsuario.php">Login / Cadastre-se</a>
+
+            <?php
+
+                session_start();
+
+                if(isset($_SESSION["email"])) {
+                    ?>
+                        <a href="../../../views/usuario/perfilUsuario.php"><?=$_SESSION["nome"]?></a>
+                    <?php
+                } else {
+                    ?>
+                        <a href="../../../views/usuario/loginUsuario.php">Login / Cadastre-se</a>
+                    <?php
+                }
+            ?>
+
+            
         </div>
         <div>
             <nav>
