@@ -75,3 +75,13 @@ create table if not exists cordshoes.pedido (
 		FOREIGN KEY (idProduto)
         REFERENCES cordshoes.produto (idProduto)
 );
+
+create table if not exists cordshoes.imagens (
+    idImagem INT NOT NULL AUTO_INCREMENT,
+    Caminho varchar(100) NOT NULL,
+    idProduto INT NOT NULL,
+    primary key(idImagem),
+    CONSTRAINT fk_Produto_Imagem
+        FOREIGN KEY (idProduto)
+        REFERENCES cordshoes.produto (idProduto)
+);

@@ -21,3 +21,14 @@ nav a {
     color: #0D1B1E;
     font-size: 35px;
 }
+
+img {
+    margin-left: -30px;
+    width: 150px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+}

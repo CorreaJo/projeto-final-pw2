@@ -28,6 +28,7 @@ $resul = mysqli_query($con, $select);
         <th>Email</th>
         <th>Telefone</th>
         <th>CPF</th>
+        <th>Imagem</th>
         <th>Ações</th>
             <?php
                 while($linha = mysqli_fetch_assoc($resul)){
@@ -38,9 +39,10 @@ $resul = mysqli_query($con, $select);
                         <td><?=$linha["email"]?></td>
                         <td><?=$linha["telefone"]?></td>
                         <td><?=$linha["cpf"]?></td>
+                        <td><img src="../<?=$linha["imagem"]?>" alt=""></td>
                         <td>
-                            <a href="../../usuario/deletarUsuario.php?idUsuario=<?=$linha["idUsuario"]?>">Deletar</a>
-                            <a href="../../usuario/updateFormUsuario.php?idUsuario=<?=$linha["idUsuario"]?>">Atualizar</a>
+                            <a style="color: black;" href="../../usuario/deletarUsuario.php?idUsuario=<?=$linha["idUsuario"]?>">Deletar</a>
+                            <a style="color: black;" href="../../usuario/updateFormUsuario.php?idUsuario=<?=$linha["idUsuario"]?>">Atualizar</a>
                         </td>
                     </tr>
                     <?php

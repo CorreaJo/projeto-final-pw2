@@ -9,12 +9,12 @@
 <body>
     <h1>Novo Produto</h1>
 
-    <form action="insertProduto.php" method="POST">
+    <form action="insertProduto.php" method="POST" enctype="multipart/form-data">
         <input type="text"  name="nome" placeholder="Nome do Produto">
         <input type="text" name="cor" placeholder="Cor do Produto">
         <textarea name="descricao" id="" cols="30" rows="10" placeholder="Descrição do Produto"></textarea>
         <label for="imagem">Insira a imagem</label>
-        <input type="file" name="imagem">
+        <input type="file" name="imagem[]" multiple="multiple">
         <input type="text" name="categoria" placeholder="Nome da Categoria">
         <input type="text" name="preco" placeholder="Preço do Produto">
         <button>Enviar</button>

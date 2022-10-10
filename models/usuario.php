@@ -1,7 +1,7 @@
 <?php
 
-function NovoUsuario($nome, $endereco, $tel, $email, $cpf, $sexo, $senha){
-    $insert = "INSERT INTO usuario (nome, endereco, telefone, email, cpf, sexo, senha) VALUES ('$nome', '$endereco', '$tel', '$email', '$cpf', '$sexo', '$senha')";
+function NovoUsuario($nome, $endereco, $tel, $email, $cpf, $sexo, $senha, $img){
+    $insert = "INSERT INTO usuario (nome, endereco, telefone, email, cpf, sexo, senha, imagem) VALUES ('$nome', '$endereco', '$tel', '$email', '$cpf', '$sexo', '$senha', '$img')";
     return $insert;
 }
 

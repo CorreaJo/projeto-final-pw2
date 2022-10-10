@@ -1,0 +1,78 @@
+body {
+    background-color: #0D1B1E;
+}
+
+.cadastro {
+    width: 25%;
+    margin: auto;
+    margin-top: 15%;
+    border-radius: 10px;
+    background-color: #C3DBC5;
+    box-sizing: border-box;
+    padding: 15px;
+    box-shadow: 0px 0px 10px white;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #0D1B1E;
+}
+
+input {
+    margin: 10px;
+    border-radius: 5px;
+    border: 0 black solid;
+    padding: 5px;
+    width: 90%;
+}
+
+input::placeholder {
+    color: #0D1B1E;
+}
+
+select {
+    margin: 5px;
+    width: 92%;
+    border: 0 black solid;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+option {
+    font-size: 1.3em;
+}
+
+option:active {
+    background-color: #C3DBC5;
+}
+
+button {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    width: 50%;
+    border-radius: 10px;
+    padding: 10px;
+    border: 0px black solid;
+    background-color: #0D1B1E;
+    font-size: 1.3em; 
+    cursor: pointer;
+    color: whitesmoke;
+}
+
+a {
+    text-decoration: underline;
+    font-size: 1.2em; 
+    color: #0D1B1E; 
+}
+
+p {
+    font-size: 1.3em;
+}
+
+.cadastre-se {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
