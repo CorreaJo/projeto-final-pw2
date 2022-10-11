@@ -14,25 +14,29 @@ $imagens = array_filter($_FILES['imagem']);
 $con = conexao();
 $insert = NovoProduto($nome, $cor, $desc, $categoria, $preco);
 
-$query = mysqli_query($con, $insert);
+
+$queryProduto = mysqli_query($con, $insert);
+$idProduto = mysqli_insert_id($con);
 
 foreach($_FILES['imagem']['name'] as $key=>$val){ 
-   $fileName = basename($_FILES['imagem']['name'][$key]); 
-   $fileTMP = basename($_FILES['imagem']['tmp_name'][$key]); 
+   $fileName = $_FILES['imagem']['name'][$key];
+   $fileTMP = $_FILES['imagem']['tmp_name'][$key]; 
    $to = "../../../public/imagens/".$fileName;
    move_uploaded_file($fileTMP, $to);
 
-   $idProduto = mysqli_insert_id($con);
    $insertImagens = "INSERT INTO imagens (caminho, idProduto) VALUES ('$to', '$idProduto')";
 
-   $query = mysqli_query($con, $insertImagens);
+   $queryImagens = mysqli_query($con, $insertImagens);
 }
 
 
-if($query) {
+if($queryProduto) {
    ?>
         <h2>Cadastro feito com sucesso!</h2>
         <a href="produto.php">Ver usuarios</a>
    <?php
+} else {
+   echo mysqli_error($con);
+   echo "erro";
 }
 ?>

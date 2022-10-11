@@ -16,14 +16,13 @@ $imagem = $_FILES["imagem"];
 $to = "../../public/imagens/".$imagem['name'];
 $from = $imagem["tmp_name"];
 
+
 move_uploaded_file($from, $to);
 
 $img = $to;
 
 $con = conexao();
 $insert = NovoUsuario($nome, $endereco, $tel, $email, $cpf, $sexo, $senha, $to);
-
-echo $insert;
 
 $query = mysqli_query($con, $insert) or die(mysqli_error($con));
 

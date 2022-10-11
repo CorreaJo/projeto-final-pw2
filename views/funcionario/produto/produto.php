@@ -4,7 +4,13 @@ require "../../../conexao.php";
 require "../../../models/produto.php";
 
 $con = conexao();
-$select = ListarTudoProduto();
+
+if(!$_GET["busca"]){
+    $select = ListarTudoProduto();
+} else {
+    $busca = $_GET["busca"];
+    $select = ListarTudoProduto()." WHERE nome LIKE '%$busca%'";
+}
 
 $resul = mysqli_query($con, $select);
 ?>
@@ -25,26 +31,36 @@ $resul = mysqli_query($con, $select);
     <h2><a href="novoProduto.php">Novo produto</a></h2>
 
     <table border="1">
-        <th>Imagem</th>
         <th>Nome</th>
         <th>Cor</th>
         <th>Descrição</th>
         <th>Categoria</th>
         <th>Preço</th>
         <th>Ações</th>
+        <th>Imagens</th>
             <?php
                 while($linha = mysqli_fetch_assoc($resul)){
                     ?>
                     <tr>
-                        <td><img src="../../../<?=$linha["imagem"]?>" alt="<?=$linha["nome"]?>"></td>
                         <td><?=$linha["nome"]?></td>
                         <td><?=$linha["cor"]?></td>
                         <td><?=$linha["descricao"]?></td>
                         <td><?=$linha["categoria"]?></td>
                         <td><?=$linha["preco"]?></td>
                         <td>
-                            <a href="deletarProduto.php?idProduto=<?=$linha["idProduto"]?>">Deletar</a>
+                            <a style="color: black;" href="deletarProduto.php?idProduto=<?=$linha["idProduto"]?>">Deletar</a>
                             <a href="updateFromProduto.php?idProduto=<?=$linha["idProduto"]?>">Atualizar</a>
+                        </td>
+                        <td>
+                        <?php
+                        $inner = "SELECT caminho from produto po INNER JOIN imagens img ON po.idProduto = img.idProduto WHERE img.idProduto=".$linha["idProduto"];
+                        $innerResul = mysqli_query($con, $inner);
+                        while($imagem = mysqli_fetch_assoc($innerResul)){
+                            ?>
+                            <img src="<?=$imagem["caminho"]?>" alt="">
+                            <?php
+                        }
+                        ?>
                         </td>
                     </tr>
                     <?php

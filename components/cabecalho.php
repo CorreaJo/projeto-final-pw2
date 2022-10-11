@@ -1,8 +1,8 @@
 <header>
         <div id="cabecalho">
             <a href="../../../views/index.php"><img src="../../../public/imagens/logo.png" alt=""></a>
-            <form action="pesquisa.php" method="post">
-                <input type="search" placeholder="Buscar produto">
+            <form action="../../../views/funcionario/produto/produto.php" method="get">
+                <input type="search" placeholder="Buscar produto" name="busca">
                 <button>Pesquisar</button>
             </form>
             <p>carrinho</p>

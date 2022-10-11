@@ -37,6 +37,7 @@ create table if not exists cordshoes.usuario (
     cpf varchar(14) NOT NULL,
     sexo varchar(25) NULL default NULL,
     senha varchar(10) NOT NULL,
+    imagem varchar(100) NULL DEFAULT NULL,
     primary key (idUsuario)
 );
 
@@ -82,5 +83,5 @@ create table if not exists cordshoes.imagens (
     primary key(idImagem),
     CONSTRAINT fk_Produto_Imagem
         FOREIGN KEY (idProduto)
-        REFERENCES cordshoes.produto (idProduto)
+        REFERENCES cordshoes.produto (idProduto) ON DELETE CASCADE ON UPDATE CASCADE
 );
