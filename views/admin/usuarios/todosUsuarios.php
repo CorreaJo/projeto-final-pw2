@@ -22,32 +22,6 @@ $resul = mysqli_query($con, $select);
     <?php require "../../../components/cabecalho.php"?>
     <h1>Todos os Usuários cadastrados</h1>
 
-    <table border="1">
-        <th>Nome</th>
-        <th>Endereço</th>
-        <th>Email</th>
-        <th>Telefone</th>
-        <th>CPF</th>
-        <th>Imagem</th>
-        <th>Ações</th>
-            <?php
-                while($linha = mysqli_fetch_assoc($resul)){
-                    ?>
-                    <tr>
-                        <td><?=$linha["nome"]?></td>
-                        <td><?=$linha["endereco"]?></td>
-                        <td><?=$linha["email"]?></td>
-                        <td><?=$linha["telefone"]?></td>
-                        <td><?=$linha["cpf"]?></td>
-                        <td><img src="../<?=$linha["imagem"]?>" alt=""></td>
-                        <td>
-                            <a style="color: black;" href="../../usuario/deletarUsuario.php?idUsuario=<?=$linha["idUsuario"]?>">Deletar</a>
-                            <a style="color: black;" href="../../usuario/updateFormUsuario.php?idUsuario=<?=$linha["idUsuario"]?>">Atualizar</a>
-                        </td>
-                    </tr>
-                    <?php
-                }
-            ?>
-    </table>
+    
 </body>
 </html>

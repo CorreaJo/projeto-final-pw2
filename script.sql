@@ -1,14 +1,16 @@
 CREATE SCHEMA IF NOT EXISTS cordshoes;
 use cordshoes;
-create table if not exists cordshoes.funcionario (
-    idFuncionario INT NOT NULL AUTO_INCREMENT,
+create table if not exists cordshoes.empregados (
+    idEmpregado INT NOT NULL AUTO_INCREMENT,
     nome varchar(75) NOT NULL,
     endereco varchar(150) NOT NULL,
     telefone varchar(11) NULL DEFAULT NULL,
     email varchar(150) NULL DEFAULT NULL,
     cpf varchar(11) NOT NULL,
     imagem varchar(30) NOT NULL,
-    primary key (idFuncionario)
+    senha varchar(20) NOT NULL,
+    cargo varchar (30) NOT NULL,
+    primary key (idEmpregado)
 );
 
 create table if not exists cordshoes.fornecedor (
@@ -51,21 +53,6 @@ create table if not exists cordshoes.categoria (
         REFERENCES cordshoes.produto (idProduto)
 );
 
-create table if not exists cordshoes.adm (
-	idAdm INT NOT NULL auto_increment,
-    nomeAdm varchar(75) NOT NULL,
-    emailAdm varchar(150) NOT NULL,
-    senhaAdm varchar (10) NOT NULL,
-    primary key (idAdm)
-);
-
-create table if not exists cordshoes.gerente (
-	idGerente INT NOT NULL auto_increment,
-    nomeGerente varchar(75) NOT NULL,
-    emailGerente varchar(150) NOT NULL,
-    senhaGerente varchar (10) NOT NULL,
-    primary key (idGerente)
-);
 
 create table if not exists cordshoes.pedido (
 	idPedido INT NOT NULL auto_increment,
