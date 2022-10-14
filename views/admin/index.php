@@ -44,7 +44,7 @@ $linhaEmpregados = mysqli_fetch_assoc($resulEmpregados);
     <section>
         <div id="empregados">
             <h2>Todos os Funcionarios Cadastrados</h2>
-            <a href="empregados/novoEmpregado.php">Cadastrar Empregados</a>
+            <a href="empregados/cadastroEmpregado.php">Cadastrar Empregados</a>
             <?php
                 if(!$linhaEmpregados["idEmpregado"]){
                     ?>
@@ -52,49 +52,21 @@ $linhaEmpregados = mysqli_fetch_assoc($resulEmpregados);
                     <?php
                 } else {
                     ?>
-                    <table border="1">
-                        <th>Nome</th>
-                        <th>Endereço</th>
-                        <th>Email</th>
-                        <th>Telefone</th>
-                        <th>CPF</th>
-                        <th>Imagem</th>
-                        <th>Cargo</th>
-                        <th>Ações</th>
-                        <?php
-                            while($linhaEmpregados){
-                                ?>
-                                <tr>
-                                    <td><?=$linhaEmpregados["nome"]?></td>
-                                    <td><?=$linhaEmpregados["endereco"]?></td>
-                                    <td><?=$linhaEmpregados["email"]?></td>
-                                    <td><?=$linhaEmpregados["telefone"]?></td>
-                                    <td><?=$linhaEmpregados["cpf"]?></td>
-                                    <td><img src="../<?=$linhaEmpregados["imagem"]?>" alt=""></td>
-                                    <td><?=$linhaEmpregados["cargo"]?></td>
-                                    <td>
-                                        <a style="color: black;" href="../../usuario/deletarUsuario.php?idUsuario=<?=$linha["idUsuario"]?>">Deletar</a>
-                                        <a style="color: black;" href="../../usuario/updateFormUsuario.php?idUsuario=<?=$linha["idUsuario"]?>">Atualizar</a>
-                                    </td>
-                                </tr>
-                                <?php
-                            }
-                        ?>
-                    </table>
-            <?php
+                        <h2>Dando erro</h2>
+                    <?php
                 }
             ?>
         </div>
         <div id="Fornecedores">
             <h2>Todos os Fornecedores Cadastrados</h2>
-            <a href="fornecedor/novoFornecedor.php">Cadastrar Fornecedor</a>
+            <a href="fornecedor/cadastroFornecedor.php">Cadastrar Fornecedor</a>
             <?php
                 if(!$linhaForne["idFornecedor"]){
                     ?>
                         <h3>Não há fornecedores cadastrados</h3>
                     <?php
                 } else {
-                    // mostra todos os fornecedores
+                    echo $linhaForne["nomeFornecedor"];
                 }
             ?>
         </div>

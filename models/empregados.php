@@ -20,7 +20,7 @@ function DeleteEmpregado($idEmpregado){
     return $delete;
 }
 
-function UpdateEmpregado($nome, $endereco, $telefone, $imagem, $email, $cpf, $idFuncionario, $senha, $cargo){
-    $update = "UPDATE empregados SET nome='$nome', endereco='$endereco', telefone='$telefone', imagem='$imagem', email='$email', cpf='$cpf', senha='$senha', cargo='$cargo' WHERE idFuncionario='$idFuncionario'";
-    return $update;
+function UpdateEmpregado($nome, $endereco, $telefone, $imagem, $email, $cpf, $idEmpregado, $senha, $cargo){
+    $update = "UPDATE empregados SET nome='$nome', endereco='$endereco', telefone='$telefone', imagem='$imagem', email='$email', cpf='$cpf', senha='$senha', cargo='$cargo' WHERE idFuncionario='$idEmpregado'";
+    return $update; 
 }

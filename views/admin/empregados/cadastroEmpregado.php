@@ -8,13 +8,13 @@
 </head>
 <body>
     <h1>Cadastrar Empregado</h1>
-    <form action="novoEmpregado.php" method="post">
+    <form action="novoEmpregado.php" method="post" enctype="multipart/form-data">
         <input type="text" name="nome" placeholder="Nome do Empregado">
         <input type="text" name="endereco" placeholder="Endereço do Empregado">
         <input type="text" name="cpf" placeholder="CPF do Empregado">
         <input type="text" name="telefone" id="telefone" placeholder="Telefone do Empregado" maxlength="11">
         <input type="email" name="email" placeholder="Email do Empregado">
-        <input type="file" name="imagem" placeholder="Foto do Empregado">
+        <input type="file" name="imagem">
         <input type="password" name="senha" placeholder="Senha do Empregado">
         <select name="cargo">
             <option value="" selected disabled>CARGO DO EMPREGADO</option>

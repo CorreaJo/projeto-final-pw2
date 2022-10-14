@@ -7,7 +7,7 @@ create table if not exists cordshoes.empregados (
     telefone varchar(11) NULL DEFAULT NULL,
     email varchar(150) NULL DEFAULT NULL,
     cpf varchar(11) NOT NULL,
-    imagem varchar(30) NOT NULL,
+    imagem varchar(100) NOT NULL,
     senha varchar(20) NOT NULL,
     cargo varchar (30) NOT NULL,
     primary key (idEmpregado)

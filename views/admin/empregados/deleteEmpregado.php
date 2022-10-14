@@ -1,19 +1,19 @@
 <?php
 
 require "../../../conexao.php";
-require "../../../models/fornecedor.php";
+require "../../../models/empregados.php";
 
-$idfornecedor = $_GET["idFornecedor"];
+$idEmpregado = $_GET["idEmpregado"];
 
 $con = conexao();
-$delete = DeleteFornecedor($idFornecedor);
+$delete = DeleteEmpregado($idEmpregado);
 
 $query = mysqli_query($con, $delete);
 
 if($query) {
    ?>
         <h2>Deletado com sucesso!</h2>
-        <a href="../">Ver Fornecedores</a>
+        <a href="../admin/">Ver Empregados</a>
    <?php
 }
 ?>
