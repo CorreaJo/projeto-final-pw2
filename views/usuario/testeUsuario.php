@@ -25,6 +25,7 @@ if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha'])
         $_SESSION["endereco"] = $linha["endereco"];
         $_SESSION["imagem"] = $linha["imagem"];
         $_SESSION["sexo"] = $linha["sexo"];
+        $_SESSION["cargo"] = $linha["cargo"];
         header("location: perfilUsuario.php");
     }
    

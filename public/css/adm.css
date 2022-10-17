@@ -1,18 +1,58 @@
 @charset "UTF-8";
 
+h1 {
+    text-align: center;
+    color: #ff5656;
+    margin-bottom: 25px;
+    margin-top: 15px;
+}
+
+#empregados {
+    margin: 15px;
+    border-top: 2px solid black;
+}
+
+.todos {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    text-align: center;
+    color: #ff5656;
+}
+
+.cadastro {
+    font-size: 1.3em;
+}
+
+.cadastro:hover {
+    text-decoration: underline;
+
+}
+
+.forne {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 25px;
+    justify-content: center;
+}
+
 .caixa {
     width: 500px;
     margin-left: 25px;
     padding: 10px;
     background-color: white;
     border-radius: 10px;
+    margin-bottom: 20px;
 }
 
-#funcionarios {
+.funcionarios {
     display: flex;
+    flex-wrap: wrap;
+    margin-top: 25px;
+    justify-content: center;
 }
 
-#empregado {
+.empregado {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -28,7 +68,7 @@
     font-size: 2.4em;
 }
 
-#empregado img {
+.empregado img {
     border-radius: 50%;
     width: 200px;
     height: 200px;
@@ -58,3 +98,16 @@ p {
     border-top: 2px black solid;
 }
 
+.naoHa {
+    text-align: center;
+}
+
+#usuarios {
+    margin: 15px;
+    border-top: 2px solid black;
+}
+
+#fornecedores {
+    margin: 15px;
+    border-top: 2px solid black;
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,15 +16,32 @@
                 <button>Pesquisar</button>
             </form>
             <p>carrinho</p>
-            <a href="../../../views/admin/usuarios/todosUsuarios.php">Ver usuarios</a>
-            <a href="../../../views/funcionario/produto/produto.php">Ver Produtos</a>
 
             <?php
-
                 session_start();
-
+                if(isset($_SESSION["cargo"])){
+                    if($_SESSION["cargo"] == "administrador"){
+                        ?>
+                            <a href="../../../views/admin/">Dashboard</a>
+                        <?php
+                    } else if($_SESSION["cargo"] == "gerente") {
+                        ?>
+                            <a href="../../../views/gerente/">Dashboard</a>
+                        <?php
+                    } else if($_SESSION["cargo"] == "funcionario"){
+                        ?>
+                            <a href="../../../views/funcionario/">Dashboard</a>
+                        <?php
+                    } else if($_SESSION["cargo"] == "cliente"){
+                        ?>
+                            <a href="../../../views/funcionario/produto/produto.php">Ver Produtos</a>
+                        <?php
+                    }
+                }
+               
                 if(isset($_SESSION["email"])) {
                     ?>
+                        <img src="<?=$_SESSION["imagem"]?>" alt="">
                         <a href="../../../views/usuario/perfilUsuario.php"><?=$_SESSION["nome"]?></a>
                     <?php
                 } else {

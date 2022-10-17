@@ -7,6 +7,7 @@ unset($_SESSION["cpf"]);
 unset($_SESSION["telefone"]);
 unset($_SESSION["imagem"]);
 unset($_SESSION["endereco"]);
+unset($_SESSION["cargo"]);
 
 header("location: ../index.php");
 ?>

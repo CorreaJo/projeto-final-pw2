@@ -10,10 +10,12 @@ $email = $_POST["email"];
 $cpf = $_POST["cpf"];
 $sexo = $_POST["sexo"];
 $senha = $_POST["senha"];
+$cargo = $_POST["cargo"];
+$imagem = "";
 $idUsuario = $_POST["idUsuario"];
 
 $con = conexao();
-$update = AtualizarPedido($nome, $endereco, $tel, $email, $cpf, $sexo, $senha, $idUsuario);
+$update = AtualizarPedido($nome, $endereco, $tel, $email, $cpf, $sexo, $senha, $imagem, $cargo, $idUsuario);
 
 $query = mysqli_query($con, $update);
 

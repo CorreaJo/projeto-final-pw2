@@ -25,6 +25,7 @@
             <input type="email" name="email" placeholder="Email"><br>
             <input type="password" name="senha" maxlength="10" placeholder="Senha"><br>
             <input type="file" name="imagem"><br>
+            <input type="hidden" name="cargo" value="cliente">
             <button>Cadastrar</button>
         </form>
     </div>

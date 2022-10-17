@@ -11,6 +11,7 @@ $email = $_POST["email"];
 $cpf = $_POST["cpf"];
 $sexo = $_POST["sexo"];
 $senha = $_POST["senha"];
+$cargo = $_POST["cargo"];
 $imagem = $_FILES["imagem"];
 
 $to = "../../public/imagens/".$imagem['name'];
@@ -22,7 +23,7 @@ move_uploaded_file($from, $to);
 $img = $to;
 
 $con = conexao();
-$insert = NovoUsuario($nome, $endereco, $tel, $email, $cpf, $sexo, $senha, $to);
+$insert = NovoUsuario($nome, $endereco, $tel, $email, $cpf, $sexo, $senha, $img, $cargo);
 
 $query = mysqli_query($con, $insert) or die(mysqli_error($con));
 
