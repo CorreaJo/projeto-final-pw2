@@ -13,7 +13,7 @@ $query = mysqli_query($con, $delete);
 if($query) {
    ?>
         <h2>Deletado com sucesso!</h2>
-        <a href="../admin/">Ver Empregados</a>
+        <a href="../">Ver Empregados</a>
    <?php
 }
 ?>

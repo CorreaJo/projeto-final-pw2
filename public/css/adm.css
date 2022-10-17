@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+.caixa {
+    width: 500px;
+    margin-left: 25px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#funcionarios {
+    display: flex;
+}
+
+#empregado {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.info p {
+    margin-top: 15px;
+}
+
+.nome {
+    color: brown;
+    text-align: center;
+    font-size: 2.4em;
+}
+
+#empregado img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+p {
+    font-size: 1.4em;
+}
+
+.botao {
+    padding: 10px;
+    border-radius: 10px;
+    border: 0px black solid;
+    background-color: #0D1B1E;
+    font-size: 1.3em; 
+    cursor: pointer;
+    color: whitesmoke;
+}
+
+
+.acoes {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 2px black solid;
+}
+

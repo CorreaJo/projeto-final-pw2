@@ -12,7 +12,7 @@
 }
 
 nav {
-    background-color: #7798AB;
+    background-color: #C3DBC5;
     padding: 20px;
 }
 
@@ -31,4 +31,8 @@ a {
     text-decoration: none;
     color: white;
     font-size: 1.2em;
+}
+
+body {
+    background-color:#95b2c3;
 }

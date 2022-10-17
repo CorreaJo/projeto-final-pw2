@@ -3,7 +3,7 @@
 require "../../../conexao.php";
 require "../../../models/fornecedor.php";
 
-$idfornecedor = $_GET["idFornecedor"];
+$idFornecedor = $_GET["idFornecedor"];
 
 $con = conexao();
 $delete = DeleteFornecedor($idFornecedor);
