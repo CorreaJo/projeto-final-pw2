@@ -10,7 +10,7 @@
 <body>
     <header>
         <div id="cabecalho">
-            <a href="../../../views/index.php"><img src="../../../public/imagens/logo.png" alt=""></a>
+            <a href="../../../views/index.php"><img class="logo" src="../../../public/imagens/logo.png" alt=""></a>
             <form action="../../../views/funcionario/produto/produto.php" method="get">
                 <input type="search" placeholder="Buscar produto" name="busca">
                 <button>Pesquisar</button>
@@ -41,8 +41,11 @@
                
                 if(isset($_SESSION["email"])) {
                     ?>
-                        <img src="<?=$_SESSION["imagem"]?>" alt="">
+                    <div id="user">
+                        <img src="../<?=$_SESSION["imagem"]?>" alt="" class="imagem">
                         <a href="../../../views/usuario/perfilUsuario.php"><?=$_SESSION["nome"]?></a>
+                        <a href="../../../views/usuario/sairUsuario.php"><img class="sair" src="../../../public/imagens/logout.png" alt=""></a>                      
+                    </div>
                     <?php
                 } else {
                     ?>

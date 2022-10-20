@@ -1,26 +1,26 @@
 <?php
 
-function insert_categoria(){
-    $insert = "INSERT INTO categoria (nomeCategoria) VALUES ('$nomeCategoria')";
+function NovaCategoria($nomeCategoria, $idProduto){
+    $insert = "INSERT INTO categoria (nomeCategoria, idProduto) VALUES ('$nomeCategoria', '$idProduto')";
     return $insert;
 }
 
-function select_tudo_categoria(){
+function ListarTudoCategoria(){
     $select = "SELECT * FROM categoria";
     return $select;
 }
 
-function ListarCategoria(){
+function ListarCategoria($idCategoria){
     $select = "SELECT * FROM categoria WHERE idCategoria='$idCategoria'";
     return $select;
 }
 
-function delete_categoria(){
+function DeletarCategoria($idCategoria){
     $delete = "DELETE FROM categoria WHERE idCategoria='$idCategoria'";
     return $delete;
 }
 
-function update_categoria(){
-    $update = "UPDATE categoria SET nomeCategoria='$nomeCategoria' WHERE idCategoria='$idCategoria'";
+function AtualizarCategoria($nomeCategoria, $idProduto, $idCategoria){
+    $update = "UPDATE categoria SET nomeCategoria='$nomeCategoria', idProduto='$idProduto' WHERE idCategoria='$idCategoria'";
     return $update;
 }

@@ -3,7 +3,7 @@
 require "../../../conexao.php";
 require "../../../models/categoria.php";
 
-mysqli_query(conexao(), ListarCategoria());
+$resul = mysqli_query(conexao(), ListarTudoCategoria());
 
 ?>
 <!DOCTYPE html>
@@ -15,20 +15,28 @@ mysqli_query(conexao(), ListarCategoria());
     <title>Categorias</title>
 </head>
 <body>
+    <?php require "../../../components/cabecalho.php";?>
     <h1>Categorias</h1>
-    <h2><a href="#">Nova Categoria</a></h2>
+    <h2><a href="cadastroCategoria.php">Nova Categoria</a></h2>
     <table border="1">
         <th>Nome</th>
         <th>Ações</th>
-        <tr>
-            <td>
-                Categoria 1
-            </td>
-            <td>
-                <a href="#">Atualizar</a>
-                <a href="#">Deletar</a>
-            </td>
-        </tr>
+        <?php
+            while($linha = mysqli_fetch_assoc($resul)){
+                ?>
+            <tr>
+                <td>
+                    <?=$linha["nomeCategoria"]?>
+                </td>
+                <td>
+                    <a href="UpdateFormCategoria.php?idCategoria=<?=$linha["idCategoria"]?>">Atualizar</a>
+                    <a href="deletarCategoria.php?idCategoria=<?=$linha["idCategoria"]?>">Deletar</a>
+                </td>
+            </tr>
+                <?php
+            }
+
+        ?>
     </table>
 </body>
 </html>

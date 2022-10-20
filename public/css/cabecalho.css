@@ -11,6 +11,10 @@
     height: 150px;
 }
 
+.logo {
+    width: 175px;
+}
+
 nav {
     background-color: #C3DBC5;
     padding: 20px;
@@ -22,17 +26,24 @@ nav a {
     font-size: 35px;
 }
 
-img {
-    margin-left: -30px;
-    width: 150px;
+.imagem {
+    height: 75px;
+    width: 75px;
+    margin-right: 10px;
+}
+
+.sair {
+    width: 30px;
+    margin-left: 15px;
+}
+
+#user {
+    display: flex;
+    align-items: center;
 }
 
 a {
     text-decoration: none;
     color: white;
     font-size: 1.2em;
-}
-
-body {
-    background-color:#95b2c3;
 }
