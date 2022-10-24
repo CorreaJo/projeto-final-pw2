@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home2/cordwe98/public_html #Add /<sub_folder> if required
+    - export DEPLOYPATH=/home2/cordwe98/pw2.cordweb.com.br #Add /<sub_folder> if required
     - /bin/cp -r * $DEPLOYPATH
