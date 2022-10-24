@@ -14,11 +14,15 @@ $senha = $_POST["senha"];
 $cargo = $_POST["cargo"];
 $imagem = $_FILES["imagem"];
 
-$to = "../../public/imagens/".$imagem['name'];
-$from = $imagem["tmp_name"];
+if($imagem['name'] != ""){
+   $to = "../../../public/imagens/".$imagem['name'];
+   $from = $imagem["tmp_name"];
 
-
-move_uploaded_file($from, $to);
+   move_uploaded_file($from, $to);
+} else {
+   $to = "../../../public/imagens/sem-foto.png";
+   $from = $imagem["tmp_name"];
+}
 
 $img = $to;
 
@@ -28,6 +32,6 @@ $insert = NovoUsuario($nome, $endereco, $tel, $email, $cpf, $sexo, $senha, $img,
 $query = mysqli_query($con, $insert) or die(mysqli_error($con));
 
 if($query) {
-   header("loginUsuario.php");
+   header("location: loginUsuario.php");
 }
 ?>

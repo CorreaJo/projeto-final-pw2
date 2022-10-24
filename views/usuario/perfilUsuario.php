@@ -12,6 +12,7 @@ $select = "SELECT * from usuario WHERE email='$logado'";
 $resul = mysqli_query($con, $select);
 
 $linha = mysqli_fetch_assoc($resul);
+
 ?>
 
 <!DOCTYPE html>

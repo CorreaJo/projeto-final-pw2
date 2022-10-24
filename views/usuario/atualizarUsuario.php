@@ -11,8 +11,17 @@ $cpf = $_POST["cpf"];
 $sexo = $_POST["sexo"];
 $senha = $_POST["senha"];
 $cargo = $_POST["cargo"];
-$imagem = "";
 $idUsuario = $_POST["idUsuario"];
+$imagem = $_POST["imagem"];
+
+if($imagem != ""){
+   $to = "../../../public/imagens/".$imagem;
+} else {
+   $to = "../../../public/imagens/sem-foto.png";
+}
+
+$img = $to;
+
 
 $con = conexao();
 $update = AtualizarPedido($nome, $endereco, $tel, $email, $cpf, $sexo, $senha, $imagem, $cargo, $idUsuario);

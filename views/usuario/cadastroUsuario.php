@@ -6,14 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login / Cadastre-se</title>
     <link rel="stylesheet" href="../../public/css/cadrastro.css">
+    <script type="text/javascript" src="../../../public/js/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="../../../public/js/jquery.maskedinput.min.js"/></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#cpf").mask("999.999.999-99");
+        });
+        $(document).ready(function(){
+            $("#telefone").mask("(99)99999-9999");
+        });
+
+    </script>
 </head>
 <body>
     <div class="cadastro">
         <h1>Cadastre-se</h1>
         <form action="novoUsuario.php" method="POST" enctype="multipart/form-data">
             <input type="text"  name="nome" placeholder="Nome"><br>
-            <input type="text" name="cpf" placeholder="CPF" maxlength="14" minlength="11"><br>
-            <input type="tel"  maxlength="11" name="telefone" placeholder="Telefone"><br>
+            <input type="text" name="cpf" id="cpf" placeholder="CPF" maxlength="25" minlength="11"><br>
+            <input type="text" name="telefone" id="telefone" placeholder="Digite um número de telefone" maxlength="15" /><br>
             <input type="text" name="endereco" placeholder="Endereço"><br>
             <select name="sexo">
                 <option value="" selected disabled>SEXO</option>
