@@ -28,9 +28,6 @@ $insert = NovoUsuario($nome, $endereco, $tel, $email, $cpf, $sexo, $senha, $img,
 $query = mysqli_query($con, $insert) or die(mysqli_error($con));
 
 if($query) {
-   ?>
-        <h2>Cadastro feito com sucesso!</h2>
-        <a href="../admin/usuarios/todosUsuarios.php">Ver usuarios</a>
-   <?php
+   header("loginUsuario.php");
 }
 ?>

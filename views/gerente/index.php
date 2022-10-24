@@ -1,7 +1,7 @@
 <?php
 
-require "../../../conexao.php";
-require "../../../models/categoria.php";
+require "../../conexao.php";
+require "../../models/categoria.php";
 
 $resul = mysqli_query(conexao(), ListarTudoCategoria());
 
@@ -15,7 +15,7 @@ $resul = mysqli_query(conexao(), ListarTudoCategoria());
     <title>Categorias</title>
 </head>
 <body>
-    <?php require "../../../components/cabecalho.php";?>
+    <?php require "../../components/cabecalho.php";?>
     <h1>Categorias</h1>
     <h2><a href="cadastroCategoria.php">Nova Categoria</a></h2>
     <table border="1">
