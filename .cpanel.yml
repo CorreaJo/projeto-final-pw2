@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home2/cordwe98/projeto-final-pw2 
-    - /bin/cp -R  $DEPLOYPATH
+    - export DEPLOYPATH=/home2/cordwe98/pw2.cordweb.com.br
+    - /bin/cp -R / $DEPLOYPATH
