@@ -22,13 +22,22 @@ $linha = mysqli_fetch_assoc($resul);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../public/css/cabecalho.css">
     <link rel="stylesheet" href="../../public/css/perfil.css">
-    <title><?=$linha["nome"]?></title>
+    <title><?=ucfirst($linha["nome"])?></title>
 </head>
 <body>
-    <img src="<?=$linha["imagem"]?>" alt="<?=$linha["nome"]?>">
-    <h1><?=$linha["nome"]?></h1>
-    <h3><?=$linha["endereco"]?></h3>
-    <h2><?=$linha["email"]?></h2>
-    <a style="color: black;" href="sairUsuario.php">Sair</a>
+    <main>
+        <h1 id="ola">Olá <strong><?=ucfirst($linha["nome"])?></strong></h1>
+        <div id="usuario"   >
+            <img id="img" src="<?=$linha["imagem"]?>" alt="<?=$linha["nome"]?>">
+            <div class="info">
+                <p class="label">Nome:</p>
+                <h2 class="nome"><?=ucfirst($linha["nome"])?></h2>
+                <p class="label">Endereço:</p>
+                <h2 class="nome"><?=$linha["endereco"]?></h2>
+                <p class="label">Email:</p>
+                <h2 class="nome"><?=$linha["email"]?></h2>
+            </div>
+        </div>
+    </main>
 </body>
 </html>

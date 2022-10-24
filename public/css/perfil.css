@@ -1,6 +1,54 @@
 @charset "UTF-8";
 
-img {
-    width: 200px; 
-    border-radius: 50%;
+main {
+    background-color: rgb(244, 244, 244);
+    height: 76vh;
+}
+
+#ola {
+    text-align: center;
+    color: #FF5964;
+    padding-top: 20px;
+    font-size: 2.2em;
+    text-decoration: underline wavy;
+}
+
+#img {
+    width: 300px; 
+    border-radius: 10px;
+}
+
+.nome {
+    margin: auto;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: #C3DBC5;
+    padding: 10px;
+    box-shadow: 0px 0px 10px white;
+    text-align: center;
+}
+
+
+#usuario {
+    display: flex;
+    align-items: center;
+    width: 1200px;
+    justify-content: space-around;
+    padding: 50px;
+    margin: auto;
+    background-color: rgb(61, 61, 61);
+    border-radius: 10px;
+    margin-top: 5%;
+}
+.info {
+    width: 600px;
+    text-align: center;
+}
+
+.label {
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+    font-size: 1.6em;
 }
