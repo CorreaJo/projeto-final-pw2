@@ -43,14 +43,14 @@ if($_SESSION["cargo"] == "funcionario"){
                     while($linha = mysqli_fetch_assoc($resulProduto)){
                         ?>
                         <tr>
-                            <td><?=$linha["nome"]?></td>
+                            <td><a style="color: black;" href="produto/produto.php?idProduto=<?=$linha["idProduto"]?>"><?=$linha["nome"]?></a></td>
                             <td><?=$linha["cor"]?></td>
                             <td><?=$linha["descricao"]?></td>
                             <td><?=$linha["categoria"]?></td>
                             <td><?=$linha["preco"]?></td>
                             <td>
                                 <a style="color: black;" href="produto/deletarProduto.php?idProduto=<?=$linha["idProduto"]?>">Deletar</a>
-                                <a href="produto/updateFromProduto.php?idProduto=<?=$linha["idProduto"]?>">Atualizar</a>
+                                <a style="color: black;" href="produto/updateFromProduto.php?idProduto=<?=$linha["idProduto"]?>">Atualizar</a>
                             </td>
                             <td>
                             <?php

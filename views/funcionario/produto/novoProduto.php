@@ -17,7 +17,15 @@ if($_SESSION["cargo"] == "funcionario"){
 
         <form action="insertProduto.php" method="POST" enctype="multipart/form-data">
             <input type="text"  name="nome" placeholder="Nome do Produto">
-            <input type="text" name="cor" placeholder="Cor do Produto">
+            <select name="cor" id="">
+                <option value="" selected disabled>Selecionar a Cor</option>
+                <option value="azul">Azul</option>
+                <option value="azul">Verde</option>
+                <option value="azul">Vermelho</option>
+                <option value="azul">Preto</option>
+                <option value="azul">Branco</option>
+                <option value="azul">Amarelo</option>
+            </select>
             <textarea name="descricao" id="" cols="30" rows="10" placeholder="Descrição do Produto"></textarea>
             <label for="imagem">Insira a imagem</label>
             <input type="file" name="imagem[]" multiple="multiple">

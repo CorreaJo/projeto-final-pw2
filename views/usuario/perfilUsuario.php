@@ -28,7 +28,7 @@ $linha = mysqli_fetch_assoc($resul);
 <body>
     <main>
         <h1 id="ola">Olá <strong><?=ucfirst($linha["nome"])?></strong></h1>
-        <div id="usuario"   >
+        <div id="usuario">
             <img id="img" src="<?=$linha["imagem"]?>" alt="<?=$linha["nome"]?>">
             <div class="info">
                 <p class="label">Nome:</p>
