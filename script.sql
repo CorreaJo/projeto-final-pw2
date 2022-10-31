@@ -8,6 +8,12 @@ create table if not exists cordshoes.fornecedor (
     primary key (idFornecedor)
 );
 
+create table if not exists cordshoes.categoria (
+	idCategoria INT NOT NULL auto_increment,
+    nomeCategoria varchar(30) NOT NULL,
+    primary key (idCategoria)
+);
+
 create table if not exists cordshoes.produto (
     idProduto INT NOT NULL AUTO_INCREMENT,
     nome varchar(100) NOT NULL,
@@ -22,7 +28,7 @@ create table if not exists cordshoes.usuario (
 	idUsuario INT NOT NULL auto_increment,
     nome varchar(75) NOT NULL,
     endereco varchar(150) NOT NULL,
-    telefone varchar(11) NULL DEFAULT NULL,
+    telefone varchar(15) NULL DEFAULT NULL,
     email varchar(150) NULL DEFAULT NULL,
     cpf varchar(14) NOT NULL,
     sexo varchar(25) NULL default NULL,
@@ -30,16 +36,6 @@ create table if not exists cordshoes.usuario (
     imagem varchar(100) NULL DEFAULT NULL,
     cargo varchar (30) NOT NULL,
     primary key (idUsuario)
-);
-
-create table if not exists cordshoes.categoria (
-	idCategoria INT NOT NULL auto_increment,
-    nomeCategoria varchar(30) NOT NULL,
-    idProduto INT NOT NULL,
-    primary key (idCategoria),
-    CONSTRAINT fk_Produto_Categoria
-		FOREIGN KEY (idProduto)
-        REFERENCES cordshoes.produto (idProduto)
 );
 
 
@@ -59,5 +55,5 @@ create table if not exists cordshoes.imagens (
     primary key(idImagem),
     CONSTRAINT fk_Produto_Imagem
         FOREIGN KEY (idProduto)
-        REFERENCES cordshoes.produto (idProduto) ON DELETE CASCADE ON UPDATE CASCADE
+        REFERENCES cordshoes.produto (idProduto)
 );

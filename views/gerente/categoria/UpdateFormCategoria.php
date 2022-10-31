@@ -25,7 +25,6 @@ if($_SESSION["cargo"] == "gerente"){
         <h1>Atualizar Categoria</h1>
         <form action="updateCategoria.php" method="post">
             <input type="text" name="nomeCategoria" value="<?=$linha["nomeCategoria"]?>">
-            <input type="text" name="idProduto" value="<?=$linha["idProduto"]?>">
             <input type="hidden" name="idCategoria" value="<?=$linha["idCategoria"]?>">
             <button>Atualizar</button>
         </form>

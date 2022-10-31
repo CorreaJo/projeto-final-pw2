@@ -14,7 +14,6 @@ $imagens = array_filter($_FILES['imagem']);
 $con = conexao();
 $insert = NovoProduto($nome, $cor, $desc, $categoria, $preco);
 
-
 $queryProduto = mysqli_query($con, $insert);
 $idProduto = mysqli_insert_id($con);
 
@@ -33,7 +32,7 @@ foreach($_FILES['imagem']['name'] as $key=>$val){
 if($queryProduto) {
    ?>
         <h2>Cadastro feito com sucesso!</h2>
-        <a href="produto.php">Ver usuarios</a>
+        <a href="../index.php">Ver usuarios</a>
    <?php
 } else {
    echo mysqli_error($con);

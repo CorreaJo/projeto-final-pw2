@@ -1,7 +1,7 @@
 <?php
 
-function NovaCategoria($nomeCategoria, $idProduto){
-    $insert = "INSERT INTO categoria (nomeCategoria, idProduto) VALUES ('$nomeCategoria', '$idProduto')";
+function NovaCategoria($nomeCategoria){
+    $insert = "INSERT INTO categoria (nomeCategoria) VALUES ('$nomeCategoria')";
     return $insert;
 }
 
@@ -20,7 +20,7 @@ function DeletarCategoria($idCategoria){
     return $delete;
 }
 
-function AtualizarCategoria($nomeCategoria, $idProduto, $idCategoria){
-    $update = "UPDATE categoria SET nomeCategoria='$nomeCategoria', idProduto='$idProduto' WHERE idCategoria='$idCategoria'";
+function AtualizarCategoria($nomeCategoria, $idCategoria){
+    $update = "UPDATE categoria SET nomeCategoria='$nomeCategoria', WHERE idCategoria='$idCategoria'";
     return $update;
 }

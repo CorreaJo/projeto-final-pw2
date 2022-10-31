@@ -21,15 +21,15 @@
                 if(isset($_SESSION["cargo"])){
                     if($_SESSION["cargo"] == "administrador"){
                         ?>
-                            <a href="../../../views/admin/">Dashboard</a>
+                            <a href="../../../views/admin/">Dashboard Adm</a>
                         <?php
                     } else if($_SESSION["cargo"] == "gerente") {
                         ?>
-                            <a href="../../../views/gerente/">Dashboard</a>
+                            <a href="../../../views/gerente/">Dashboard Gerente</a>
                         <?php
                     } else if($_SESSION["cargo"] == "funcionario"){
                         ?>
-                            <a href="../../../views/funcionario/">Dashboard</a>
+                            <a href="../../../views/funcionario/">Dashboard Func</a>
                         <?php
                     } else if($_SESSION["cargo"] == "cliente"){
                         ?>

@@ -1,5 +1,6 @@
 <?php
-require "../../components/cabecalho.php";
+require "../../../components/cabecalho.php";
+require "../../../conexao.php";
 
 if($_SESSION["cargo"] == "funcionario"){
     ?>
@@ -20,7 +21,19 @@ if($_SESSION["cargo"] == "funcionario"){
             <textarea name="descricao" id="" cols="30" rows="10" placeholder="Descrição do Produto"></textarea>
             <label for="imagem">Insira a imagem</label>
             <input type="file" name="imagem[]" multiple="multiple">
-            <input type="text" name="categoria" placeholder="Nome da Categoria">
+            <select name="categoria" id="">
+                <option value="" selected disabled>Selecionar Categoria</option>
+                <?php
+                    $select = "SELECT * FROM categoria";
+                    $query = mysqli_query(conexao(), $select);
+
+                    while($linha = mysqli_fetch_assoc($query)){
+                        ?>
+                            <option value="<?=$linha["nomeCategoria"]?>"><?=$linha["nomeCategoria"]?></option>
+                        <?php
+                    }
+                ?>
+            </select>
             <input type="text" name="preco" placeholder="Preço do Produto">
             <button>Enviar</button>
         </form>

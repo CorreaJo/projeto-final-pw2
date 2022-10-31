@@ -14,7 +14,7 @@ $query = mysqli_query($con, $deleteImagens);
 if($query) {
    ?>
         <h2>Deletado com sucesso!</h2>
-        <a href="produto.php">Ver produtos</a>
+        <a href="../index.php">Ver produtos</a>
    <?php
 } else {
    echo mysqli_error($con);

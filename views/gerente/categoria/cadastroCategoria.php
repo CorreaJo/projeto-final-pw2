@@ -15,7 +15,6 @@ if($_SESSION["cargo"] == "gerente"){
         <h1>Nova Categoria</h1>
         <form action="novaCategoria.php" method="post">
             <input type="text" name="nomeCategoria">
-            <input type="text" name="idProduto">
             <button>Cadastrar</button>
         </form>
     </body>

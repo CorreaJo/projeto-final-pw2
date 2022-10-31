@@ -20,7 +20,7 @@ function DeleteProduto($idProduto){
     return $delete;
 }
 
-function AtualizarProduto($nome, $cor, $desc, $imagem, $categoria, $preco, $idProduto){
-    $update = "UPDATE produto SET nome='$nome', cor='$cor', descricao='$desc', imagem='$imagem', categoria='$categoria', preco='$preco' WHERE idProduto='$idProduto'";
+function AtualizarProduto($nome, $cor, $desc, $categoria, $preco, $idProduto){
+    $update = "UPDATE produto SET nome='$nome', cor='$cor', descricao='$desc', categoria='$categoria', preco='$preco' WHERE idProduto='$idProduto'";
     return $update;
 }

@@ -5,10 +5,9 @@ require "../../../conexao.php";
 require "../../../models/categoria.php";
 
 $nomeCategoria = $_POST["nomeCategoria"];
-$idProduto = $_POST["idProduto"];
 $idCategoria = $_POST["idCategoria"];
 
-$resul = mysqli_query(conexao(), AtualizarCategoria($nomeCategoria, $idProduto, $idCategoria));
+$resul = mysqli_query(conexao(), AtualizarCategoria($nomeCategoria, $idCategoria));
 if($resul){
     echo "Atualizado com sucesso";
 } else {
