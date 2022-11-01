@@ -11,8 +11,8 @@
         <div id="cabecalho">
             <a href="../../../views/index.php"><img class="logo" src="../../../public/imagens/logo.png" alt=""></a>
             <form action="../../../views/funcionario/produto/buscaProduto.php" method="get">
-                <input type="search" placeholder="Buscar produto" name="busca">
-                <button>Pesquisar</button>
+                <input type="text" placeholder="Buscar produto" name="busca" class="pesquisar">
+                <button><img src="../../../public/imagens/lupa.png" class="lupa" alt=""></button>
             </form>
             <p>carrinho</p>
 

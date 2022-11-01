@@ -47,3 +47,42 @@ a {
     color: white;
     font-size: 1.2em;
 }
+
+.pesquisar {
+    border-radius: 10px;
+    padding: 10px;
+    width: 320px;
+    border: 0px;
+    font-size: 1.1em;
+}
+
+.pesquisar::placeholder {
+    color: #0D1B1E;
+    font-weight: 600;
+}
+
+.pesquisar:focus {
+    color: #0D1B1E;
+    font-weight: 600;
+    outline: 0;
+}
+
+.lupa {
+    width: 30px;
+    margin-top: -15px;
+    margin-left: -30px;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    border: 0px;
+    width: 0px;
+    height: 0px;
+    padding: 0px;
+    cursor: pointer;
+}
