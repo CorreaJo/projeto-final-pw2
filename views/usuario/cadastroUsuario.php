@@ -5,20 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login / Cadastre-se</title>
-    <link rel="stylesheet" href="../../public/css/cadrastro.css">
-    <script type="text/javascript" src="../../../public/js/jquery-3.6.1.min.js"></script>
-    <script type="text/javascript" src="../../../public/js/jquery.maskedinput.min.js"/></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $("#cpf").mask("999.999.999-99");
-        });
-        $(document).ready(function(){
-            $("#telefone").mask("(99)99999-9999");
-        });
-
-    </script>
+    <link rel="stylesheet" href="../../public/css/forms.css">
+    <script type="text/javascript" src="../../public/js/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="../../public/js/jquery.maskedinput.min.js"/></script>
+    <script src="../../public/js/mask.js"></script>
 </head>
 <body>
+    <section>
     <div class="cadastro">
         <h1>Cadastre-se</h1>
         <form action="novoUsuario.php" method="POST" enctype="multipart/form-data">
@@ -35,10 +28,14 @@
             </select><br>
             <input type="email" name="email" placeholder="Email"><br>
             <input type="password" name="senha" maxlength="10" placeholder="Senha"><br>
-            <input type="file" name="imagem"><br>
+            <div class="upload">
+                <img src="../../public/imagens/upload-na-nuvem.png" alt="">
+                <input type="file" name="imagem"><br>
+            </div>
             <input type="hidden" name="cargo" value="cliente">
             <button>Cadastrar</button>
         </form>
     </div>
+    </section>
 </body>
 </html>
