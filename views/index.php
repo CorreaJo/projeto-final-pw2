@@ -1,3 +1,13 @@
+<?php
+
+require "../conexao.php";
+require "../models/produto.php";
+
+$select = "SELECT * FROM produto WHERE idProduto <= 12";
+$query = mysqli_query(conexao(), $select);
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,7 +25,24 @@
             <h2>Lançamento</h2>
         </div>
         <div id="produtos">
-            <h2>Produtos</h2>
+            <h2>Veja Alguns dos nossos Produtos</h2>
+            <div class="produtos">
+                <?php
+                    while($produto = mysqli_fetch_assoc($query)){
+                        $preco = number_format($produto["preco"], 2, ',', '.');
+                        ?>
+                            <div class="produto">
+                                <img src="<?=$produto["imagem"]?>" alt="">
+                                <div>
+                                    <h2><?=$produto["nome"]?></h2>
+                                    <h3>R$<?=$preco?></h3>
+                                    <a href="funcionario/produto/produto.php?idProduto=<?=$produto["idProduto"]?>">Ver Produto </a>
+                                </div>
+                            </div>
+                        <?php
+                    }
+                ?>
+            </div>
         </div>
         <div id="seja-membro">
             <h2>Seja Membro</h2>

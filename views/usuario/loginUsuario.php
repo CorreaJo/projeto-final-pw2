@@ -19,7 +19,6 @@
                     <p>Não possui cadastro?</p>
                     <a href="cadastroUsuario.php">Cadastre-se</a>
                 </div>
-                
             </form>
         </div>
     </section>

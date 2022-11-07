@@ -27,7 +27,9 @@ if($_SESSION["cargo"] == "funcionario"){
                 <option value="azul">Amarelo</option>
             </select>
             <textarea name="descricao" id="" cols="30" rows="10" placeholder="Descrição do Produto"></textarea>
-            <label for="imagem">Insira a imagem</label>
+            <label for="principal">Insira a imagem principal</label>
+            <input type="file" name="principal">
+            <label for="imagem">Insira as imagens secundárias</label>
             <input type="file" name="imagem[]" multiple="multiple">
             <select name="categoria" id="">
                 <option value="" selected disabled>Selecionar Categoria</option>
