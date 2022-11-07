@@ -2,9 +2,12 @@
 
 require "../conexao.php";
 require "../models/produto.php";
+require "../models/categoria.php";
 
 $select = "SELECT * FROM produto WHERE idProduto <= 12";
 $query = mysqli_query(conexao(), $select);
+
+$queryCategoria = mysqli_query(conexao(), ListarTudoCategoria());
 
 ?>
 
@@ -20,6 +23,17 @@ $query = mysqli_query(conexao(), $select);
 </head>
 <body>
     <?php require "../components/cabecalho.php"?>
+    <div>
+        <nav>
+            <?php
+                while($categoria = mysqli_fetch_assoc($queryCategoria)){
+                    ?>
+                        <a href="#"><?=$categoria["nomeCategoria"]?></a>
+                    <?php
+                }
+            ?>
+        </nav>
+    </div>
     <main>
         <div id="banner">
             <h2>Lançamento</h2>
@@ -48,8 +62,6 @@ $query = mysqli_query(conexao(), $select);
             <h2>Seja Membro</h2>
         </div>
     </main>
-    <footer>
-
-    </footer>
+    <?php require "../components/rodape.php"?>    
 </body>
 </html>

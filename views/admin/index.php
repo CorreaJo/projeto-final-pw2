@@ -58,12 +58,13 @@ if($_SESSION["cargo"] == "administrador"){
                                         <div class="acoes">
                                             <div>
                                                 <p>CPF: <?=$linhaEmpregados["cpf"]?></p>       
-                                                <p>Endereço: <?=$linhaEmpregados["endereco"]?></p>
                                                 <p>Telefone: <?=$linhaEmpregados["telefone"]?></p>
                                             </div>
-                                            <div>
-                                            <a class="botao" href="../../views/usuario/deletarUsuario.php?idUsuario=<?=$linhaEmpregados["idUsuario"]?>">Deletar</a>
-                                            <a class="botao" href="../../views/usuario/updateFormUsuario.php?idUsuario=<?=$linhaEmpregados["idUsuario"]?>">Atualizar</a>
+                                            <div class="botoes">
+                                                <div class="botao"><a href="../../views/usuario/deletarUsuario.php?idUsuario=<?=$linhaEmpregados["idUsuario"]?>">Deletar</a></div>
+                                                <div class="botao">
+                                                    <a href="../../views/usuario/updateFormUsuario.php?idUsuario=<?=$linhaEmpregados["idUsuario"]?>">Atualizar</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -132,7 +133,6 @@ if($_SESSION["cargo"] == "administrador"){
                                     <div class="acoes">
                                         <div>
                                             <p>CPF: <?=$linhaUsuario["cpf"]?></p>       
-                                            <p>Endereço: <?=$linhaUsuario["endereco"]?></p>
                                             <p>Telefone: <?=$linhaUsuario["telefone"]?></p>
                                         </div>
                                         <div>

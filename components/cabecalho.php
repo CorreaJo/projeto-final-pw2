@@ -55,11 +55,6 @@
 
             
         </div>
-        <div>
-            <nav>
-                <a href="#">Categoria</a>
-            </nav>
-        </div>
 </header>
 </body>
 </html>

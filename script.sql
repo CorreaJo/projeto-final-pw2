@@ -19,7 +19,7 @@ create table if not exists cordshoes.produto (
     nome varchar(100) NOT NULL,
     cor varchar(20) NULL DEFAULT NULL,
     descricao text(600) NULL DEFAULT NULL,
-    categoria varchar(15) NULL DEFAULT NULL,
+    categoria varchar(50) NULL DEFAULT NULL,
     imagem varchar(100) NULL DEFAULT NULL,
     preco decimal(9,2) NOT NULL,
     primary key (idProduto)

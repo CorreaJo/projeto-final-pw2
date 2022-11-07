@@ -25,9 +25,9 @@ if($imagem['name'] != ""){
 $con = conexao();
 $insert = NovoProduto($nome, $cor, $desc, $categoria, $preco, $to);
 
+
 $queryProduto = mysqli_query($con, $insert);
 $idProduto = mysqli_insert_id($con);
-
 
 
 foreach($_FILES['imagem']['name'] as $key=>$val){ 

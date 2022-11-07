@@ -3,7 +3,7 @@
 }
 
 #cabecalho {
-    background-color: #0D1B1E;
+    background-color: #6D99B3;
     color: white;
     display: flex;
     justify-content: space-around;
@@ -16,13 +16,13 @@
 }
 
 nav {
-    background-color: #C3DBC5;
+    background-color: #597c91;
     padding: 20px;
 }
 
 nav a {
     text-decoration: none;
-    color: #0D1B1E;
+    color: white;
     font-size: 35px;
 }
 

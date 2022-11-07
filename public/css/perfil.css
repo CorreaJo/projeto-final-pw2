@@ -1,8 +1,7 @@
 @charset "UTF-8";
 
 main {
-    background-color: rgb(244, 244, 244);
-    height: 76vh;
+    height: 100vh;
 }
 
 #ola {
@@ -23,7 +22,7 @@ main {
     width: 100%;
     margin-bottom: 10px;
     border-radius: 10px;
-    background-color: #C3DBC5;
+    background-color: #6D99B3;
     padding: 10px;
     box-shadow: 0px 0px 10px white;
     text-align: center;

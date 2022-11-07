@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+}
+
+#foo {
+    font-size: 1.5em;
+    padding: 10px;
+    background-color: #597c91;
+    text-align: center;
+    color: white;
+}
+
+#rodape {
+    background-color: #6D99B3;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+#logo img {
+    width: 150px;
+    margin-right: 20px;
+}
+
+#forma-pag h3 {
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#links {
+   margin-right: 30px;
+}
+
+#links li {
+    list-style: none;
+    padding-top: 7px;
+}
+
+#links li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.4em;
+    transition: 0.2s;
+}
+#links li a:hover {
+    color: var(--cor0);
+}
+
+#sociais h3 {
+    text-align: center;
+    padding-bottom: 7px;
+    font-size: 1.4em;
+    padding-bottom: 10px;
+}
+
+#segurança {
+    width: 350px;
+    text-align: center;
+}
+
+#segurança img {
+    width: 33%;
+}
+
+#segurança h3 {
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+#reclame {
+    width: 33%;
+    margin-left: 15px;
+}
