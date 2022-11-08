@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+body {
+    background-color: var(--cor6);
+}
+
+main {
+    margin: 50px auto;
+    width: 70%;
+}
+
+#cadastrados {
+    margin: 30px;
+    border: 1px solid var(--cor3);
+    border-radius: 20px;
+}
+
+.novo a {
+    color: black;
+}
+
+#cadastrados h1 {
+    text-align: center;
+    color: var(--cor1);
+    margin-top: 30px;
+}
+
+#borda {
+    margin: 30px 20px;
+    border: 1px solid #6D99B3;
+}
+
+.nomes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nomes div {
+    width: 200px;
+}
+
+.categoria {
+    text-align: center;
+    padding: 10px;
+    width: 200px;
+}
+
+.nome {
+    text-align: center;
+    padding: 10px;
+    width: 300px;
+}
+
+.estoque {
+    text-align: center;
+    padding: 10px;
+    width: 150px;
+}
+
+.etq {
+    margin-right: 30px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.prc {
+    margin-right: 30px;
+}
+
+.acoes {
+    text-align: center;
+    padding: 10px;
+    width: 200px;
+}
+
+.preco {
+    text-align: center;
+    padding: 10px;
+    width: 150px;
+}
+
+#preço-tec {
+    margin-right: 20px;
+}
+
+.produto {
+    display: flex;
+    height: 200px;
+    background-color: #b1d891e8;
+    margin-bottom: 15px;
+    align-items: center;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+.produto img {
+    margin-left: 15px;
+    width: 170px;
+    height: 170px;
+    border-radius: 10px;
+}
+
+.produto h2 {
+    width: 300px;
+    color: #416d86;
+    text-align: center;
+}
+
+.produto p {
+    font-size: 1.4em;
+    color: #416d86;
+}
+
+.produto h3 {
+    color: #416d86;
+    font-size: 1.4em;
+}
+
+.botao, .atualizar {
+    text-align: center;
+    width: 150px;
+    padding: 5px 10px;
+    font-size: 1.2em;
+    font-weight: 600;
+    background-color: #6a8158;
+    transition: 0.3s;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.atualizar:hover {
+    background-color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.botao:hover {
+    background-color: rgb(253, 28, 28);
+    text-decoration: underline;
+    cursor: pointer;
+}

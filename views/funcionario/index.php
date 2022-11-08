@@ -25,49 +25,43 @@ if($_SESSION["cargo"] == "funcionario"){
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Todos os Produtos</title>
         <link rel="stylesheet" href="../../../public/css/cabecalho.css">
+        <link rel="stylesheet" href="../../../public/css/dashboardFunc.css">
     </head>
     <body>
-        <h1>Todos os produtos cadastrados</h1>
-
-        <h2><a href="produto/novoProduto.php">Novo produto</a></h2>
-
-        <table border="1">
-            <th>Nome</th>
-            <th>Cor</th>
-            <th>Descrição</th>
-            <th>Categoria</th>
-            <th>Preço</th>
-            <th>Ações</th>
-            <th>Imagens</th>
-                <?php
-                    while($linha = mysqli_fetch_assoc($resulProduto)){
-                        ?>
-                        <tr>
-                            <td><a style="color: black;" href="produto/produto.php?idProduto=<?=$linha["idProduto"]?>"><?=$linha["nome"]?></a></td>
-                            <td><?=$linha["cor"]?></td>
-                            <td><?=$linha["descricao"]?></td>
-                            <td><?=$linha["categoria"]?></td>
-                            <td><?=$linha["preco"]?></td>
-                            <td>
-                                <a style="color: black;" href="produto/deletarProduto.php?idProduto=<?=$linha["idProduto"]?>">Deletar</a>
-                                <a style="color: black;" href="produto/updateFromProduto.php?idProduto=<?=$linha["idProduto"]?>">Atualizar</a>
-                            </td>
-                            <td>
-                            <?php
-                            $inner = "SELECT caminho from produto po INNER JOIN imagens img ON po.idProduto = img.idProduto WHERE img.idProduto=".$linha["idProduto"];
-                            $innerResul = mysqli_query($con, $inner);
-                            while($imagem = mysqli_fetch_assoc($innerResul)){
-                                ?>
-                                <img src="<?=$imagem["caminho"]?>" alt="">
-                                <?php
-                            }
+    <div id="cadastrados">
+            <h1>Produtos Cadastrados</h1>
+            <h2 class="novo"><a href="produto/novoProduto.php">Cadastrar Novo produto</a></h2>
+            <div id="borda"></div>
+            <div class="nomes">
+                <div></div>
+                <h2 class="nome">Nome</h2>
+                <h2 class="categoria">Categoria</h2>
+                <h2 class="estoque">Estoque</h2>
+                <h2 class="preco">Preço</h2>
+                <h2 class="acoes">Ações</h2>
+            </div>
+            <div id="produtos">
+                    <?php
+                        while($linha = mysqli_fetch_assoc($resulProduto)){
+                            $preco = number_format($linha["preco"], 2, ',', '.');
                             ?>
-                            </td>
-                        </tr>
-                        <?php
-                    }
-                ?>
-        </table>
+                                <div class="produto">
+                                    <img class="imagem" src="<?=$linha["imagem"]?>" alt="">
+                                    <h2 class="nome"><?=$linha["nome"]?></h2>
+                                    <h2 class="categoria"><?=$linha["categoria"]?></h2>
+                                    <p class="estoque etq">5</p><!-- <p><?=$linha["estoque"]?></p> -->
+                                    <h3 class="preco prc">R$<?=$preco?></h3>
+                                    <div class="acoes">
+                                        <div class="botao"><a href="produto/deletarProduto.php?idProduto=<?=$linha["idProduto"]?>">Deletar</a></div>
+                                        <div class="atualizar"><a href="produto/updateFromProduto.php?idProduto=<?=$linha["idProduto"]?>">Atualizar</a></div>
+                                    </div>
+                                    
+                                </div>
+                            <?php
+                        }
+                    ?>
+            </div>
+        </div>
     </body>
     </html>
     <?php
