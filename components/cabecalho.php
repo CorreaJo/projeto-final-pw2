@@ -14,26 +14,27 @@
                 <input type="text" placeholder="Buscar produto" name="busca" class="pesquisar">
                 <button><img src="../../../public/imagens/lupa.png" class="lupa" alt=""></button>
             </form>
-            <p>carrinho</p>
+
+            <a class="link" href="../../../views/carrinho/carrinho.php">Carrinho</a>
 
             <?php
                 session_start();
                 if(isset($_SESSION["cargo"])){
                     if($_SESSION["cargo"] == "administrador"){
                         ?>
-                            <a href="../../../views/admin/">Dashboard Adm</a>
+                            <a class="link" href="../../../views/admin/">Dashboard Adm</a>
                         <?php
                     } else if($_SESSION["cargo"] == "gerente") {
                         ?>
-                            <a href="../../../views/gerente/">Dashboard Gerente</a>
+                            <a class="link" href="../../../views/gerente/">Dashboard Gerente</a>
                         <?php
                     } else if($_SESSION["cargo"] == "funcionario"){
                         ?>
-                            <a href="../../../views/funcionario/">Dashboard Func</a>
+                            <a class="link" href="../../../views/funcionario/">Dashboard Func</a>
                         <?php
                     } else if($_SESSION["cargo"] == "cliente"){
                         ?>
-                            <a href="../../../views/funcionario/produto/produto.php">Ver Produtos</a>
+                            <a class="link" href="../../../views/funcionario/produto/produto.php">Ver Produtos</a>
                         <?php
                     }
                 }
@@ -42,13 +43,13 @@
                     ?>
                     <div id="user">
                         <img src="../<?=$_SESSION["imagem"]?>" alt="" class="imagem">
-                        <a href="../../../views/usuario/perfilUsuario.php"><?=$_SESSION["nome"]?></a>
-                        <a href="../../../views/usuario/sairUsuario.php"><img class="sair" src="../../../public/imagens/logout.png" alt=""></a>                      
+                        <a class="link" href="../../../views/usuario/perfilUsuario.php"><?=$_SESSION["nome"]?></a>
+                        <a class="link" href="../../../views/usuario/sairUsuario.php"><img class="sair" src="../../../public/imagens/logout.png" alt=""></a>                      
                     </div>
                     <?php
                 } else {
                     ?>
-                        <a href="../../../views/usuario/loginUsuario.php">Login / Cadastre-se</a>
+                        <a class="link" href="../../../views/usuario/loginUsuario.php">Login / Cadastre-se</a>
                     <?php
                 }
             ?>

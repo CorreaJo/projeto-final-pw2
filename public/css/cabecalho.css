@@ -44,7 +44,7 @@ nav a {
     align-items: center;
 }
 
-a {
+.link {
     text-decoration: none;
     color: white;
     font-size: 1.2em;
