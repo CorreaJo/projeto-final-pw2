@@ -27,10 +27,6 @@ if($_SESSION["cargo"] == "funcionario"){
                 <option value="azul">Amarelo</option>
             </select>
             <textarea name="descricao" id="" cols="30" rows="10" placeholder="Descrição do Produto"></textarea>
-            <label for="principal">Insira a imagem principal</label>
-            <input type="file" name="principal">
-            <label for="imagem">Insira as imagens secundárias</label>
-            <input type="file" name="imagem[]" multiple="multiple">
             <select name="categoria" id="">
                 <option value="" selected disabled>Selecionar Categoria</option>
                 <?php
@@ -44,7 +40,22 @@ if($_SESSION["cargo"] == "funcionario"){
                     }
                 ?>
             </select>
+            <select name="tamanho" id="">
+                <option value="" selected disabled>Selecione o Tamanho</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+            </select>
+            <input type="number" name="estoque" placeholder="Quantidade no Estoque">
             <input type="text" name="preco" placeholder="Preço do Produto">
+            <label for="principal">Insira a imagem principal</label>
+            <input type="file" name="principal">
+            <label for="imagem">Insira as imagens secundárias</label>
+            <input type="file" name="imagem[]" multiple="multiple">
             <button>Enviar</button>
         </form>
     </body>

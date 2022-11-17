@@ -7,7 +7,7 @@ $busca = $_GET["busca"];
 $con = conexao();
 
 $selectProduto = "SELECT * FROM produto WHERE nome like'%$busca%'";
-$resulProduto = mysqli_query($con, $selectProduto);
+$query = mysqli_query($con, $selectProduto);
 
 ?>
 
@@ -19,49 +19,29 @@ $resulProduto = mysqli_query($con, $selectProduto);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todos os Produtos</title>
     <link rel="stylesheet" href="../../../public/css/cabecalho.css">
+    <link rel="stylesheet" href="../../../public/css/buscaProduto.css">
 </head>
 <body>
     <?php require "../../../components/cabecalho.php"?>
-    <h1>Todos os produtos cadastrados</h1>
-
-    <h2><a href="produto/novoProduto.php">Novo produto</a></h2>
-
-    <table border="1">
-        <th>Nome</th>
-        <th>Cor</th>
-        <th>Descrição</th>
-        <th>Categoria</th>
-        <th>Preço</th>
-        <th>Ações</th>
-        <th>Imagens</th>
-            <?php
-                while($linha = mysqli_fetch_assoc($resulProduto)){
-                    ?>
-                    <tr>
-                        <td><a style="color: black;" href="produto.php?idProduto=<?=$linha["idProduto"]?>"><?=$linha["nome"]?></a></td>
-                        <td><?=$linha["cor"]?></td>
-                        <td><?=$linha["descricao"]?></td>
-                        <td><?=$linha["categoria"]?></td>
-                        <td><?=$linha["preco"]?></td>
-                        <td>
-                            <a style="color: black;" href="produto/deletarProduto.php?idProduto=<?=$linha["idProduto"]?>">Deletar</a>
-                            <a href="produto/updateFromProduto.php?idProduto=<?=$linha["idProduto"]?>">Atualizar</a>
-                        </td>
-                        <td>
-                        <?php
-                        $inner = "SELECT caminho from produto po INNER JOIN imagens img ON po.idProduto = img.idProduto WHERE img.idProduto=".$linha["idProduto"];
-                        $innerResul = mysqli_query($con, $inner);
-                        while($imagem = mysqli_fetch_assoc($innerResul)){
-                            ?>
-                            <img src="<?=$imagem["caminho"]?>" alt="">
-                            <?php
-                        }
+    <div id="produtos">
+            <h2 class="titulo">Encontramos alguns resultados:</h2>
+            <div class="produtos">
+                <?php
+                    while($produto = mysqli_fetch_assoc($query)){
+                        $preco = number_format($produto["preco"], 2, ',', '.');
                         ?>
-                        </td>
-                    </tr>
-                    <?php
-                }
-            ?>
-    </table>
+                            <div class="produto">
+                                <img src="<?=$produto["imagem"]?>" alt="">
+                                <div>
+                                    <h2><?=$produto["nome"]?></h2>
+                                    <h3>R$<?=$preco?></h3>
+                                    <a href="produto.php?idProduto=<?=$produto["idProduto"]?>">Ver Produto </a>
+                                </div>
+                            </div>
+                        <?php
+                    }
+                ?>
+            </div>
+        </div>
 </body>
 </html>

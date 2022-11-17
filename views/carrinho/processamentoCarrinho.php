@@ -8,7 +8,7 @@ $nome = $_POST["nome"];
 $imagem = $_POST["imagem"];
 $categoria = $_POST["categoria"];
 $cor = $_POST["cor"];
-// $tamanho = $_POST["tamanho"];
+$tamanho = $_POST["tamanho"];
 
 // criando sessão carrinho
 
@@ -23,7 +23,7 @@ if(isset($acao) == "adicionar"){
         $_SESSION["carrinho"][$idProduto]["qtd"] = $qtd;
         $_SESSION["carrinho"][$idProduto]["nome"] = $nome;
         $_SESSION["carrinho"][$idProduto]["imagem"] = $imagem;
-   //   $_SESSION["carrinho"][$idProduto]["tamanho"] = $tamanho;
+        $_SESSION["carrinho"][$idProduto]["tamanho"] = $tamanho;
         $_SESSION["carrinho"][$idProduto]["cor"] = $cor;
         $_SESSION["carrinho"][$idProduto]["categoria"] = $categoria;
         
@@ -37,7 +37,12 @@ if(isset($acao) == "adicionar"){
 
 if(isset($acao) == "deletar"){
     if(isset($_SESSION["carrinho"][$idProduto][$qtd])){
-        unset($_SESSION["carrinho"][$idProduto][$qtd]);
+        $_SESSION["carrinho"][$idProduto]["qtd"] = $qtd;
+        $_SESSION["carrinho"][$idProduto]["nome"] = $nome;
+        $_SESSION["carrinho"][$idProduto]["imagem"] = $imagem;
+        $_SESSION["carrinho"][$idProduto]["tamanho"] = $tamanho;
+        $_SESSION["carrinho"][$idProduto]["cor"] = $cor;
+        $_SESSION["carrinho"][$idProduto]["categoria"] = $categoria;
     }
     header("location: carrinho.php");
 }

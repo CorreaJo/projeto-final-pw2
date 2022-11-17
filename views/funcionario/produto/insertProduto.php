@@ -9,7 +9,9 @@ $cor = $_POST["cor"];
 $desc = $_POST["descricao"];
 $categoria = $_POST["categoria"];
 $preco = $_POST["preco"];
-$imagem = $_FILES["principal"]; 
+$estoque = $_POST["estoque"];
+$tamanho = $_POST["tamanho"];
+$imagem = $_FILES["principal"];
 $imagens = array_filter($_FILES['imagem']);
 
 if($imagem['name'] != ""){
@@ -23,7 +25,7 @@ if($imagem['name'] != ""){
 }
 
 $con = conexao();
-$insert = NovoProduto($nome, $cor, $desc, $categoria, $preco, $to);
+$insert = NovoProduto($nome, $cor, $desc, $categoria, $preco, $to, $estoque, $tamanho);
 
 
 $queryProduto = mysqli_query($con, $insert);

@@ -15,35 +15,30 @@
                 <button><img src="../../../public/imagens/lupa.png" class="lupa" alt=""></button>
             </form>
 
-            <a class="link" href="../../../views/carrinho/carrinho.php">Carrinho</a>
+            <a class="link" href="../../../views/carrinho/carrinho.php"><img class="icone" src="../../../public/imagens/carrinhos-de-compras.png" alt=""></a>
 
             <?php
                 session_start();
                 if(isset($_SESSION["cargo"])){
                     if($_SESSION["cargo"] == "administrador"){
                         ?>
-                            <a class="link" href="../../../views/admin/">Dashboard Adm</a>
+                            <a class="link" href="../../../views/admin/"><img class="icone" src="../../../public/imagens/ajuste-de-contraste.png" alt=""></a>
                         <?php
                     } else if($_SESSION["cargo"] == "gerente") {
                         ?>
-                            <a class="link" href="../../../views/gerente/">Dashboard Gerente</a>
+                            <a class="link" href="../../../views/gerente/"><img class="icone" src="../../../public/imagens/ajuste-de-contraste.png" alt=""></a>
                         <?php
                     } else if($_SESSION["cargo"] == "funcionario"){
                         ?>
-                            <a class="link" href="../../../views/funcionario/">Dashboard Func</a>
+                            <a class="link" href="../../../views/funcionario/"><img class="icone" src="../../../public/imagens/ajuste-de-contraste.png" alt=""></a>
                         <?php
-                    } else if($_SESSION["cargo"] == "cliente"){
-                        ?>
-                            <a class="link" href="../../../views/funcionario/produto/produto.php">Ver Produtos</a>
-                        <?php
-                    }
+                    } 
                 }
                
                 if(isset($_SESSION["email"])) {
                     ?>
                     <div id="user">
-                        <img src="../<?=$_SESSION["imagem"]?>" alt="" class="imagem">
-                        <a class="link" href="../../../views/usuario/perfilUsuario.php"><?=$_SESSION["nome"]?></a>
+                        <a class="link" href="../../../views/usuario/perfilUsuario.php"><img src="../<?=$_SESSION["imagem"]?>" alt="" class="imagem"></a>
                         <a class="link" href="../../../views/usuario/sairUsuario.php"><img class="sair" src="../../../public/imagens/logout.png" alt=""></a>                      
                     </div>
                     <?php

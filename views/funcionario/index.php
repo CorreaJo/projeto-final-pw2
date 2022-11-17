@@ -47,9 +47,9 @@ if($_SESSION["cargo"] == "funcionario"){
                             ?>
                                 <div class="produto">
                                     <img class="imagem" src="<?=$linha["imagem"]?>" alt="">
-                                    <h2 class="nome"><?=$linha["nome"]?></h2>
+                                    <a href="produto/produto.php?idProduto=<?=$linha["idProduto"]?>"><h2 class="nome"><?=$linha["nome"]?></h2></a>
                                     <h2 class="categoria"><?=$linha["categoria"]?></h2>
-                                    <p class="estoque etq">5</p><!-- <p><?=$linha["estoque"]?></p> -->
+                                    <p class="estoque etq"><?=$linha["estoque"]?></p>
                                     <h3 class="preco prc">R$<?=$preco?></h3>
                                     <div class="acoes">
                                         <div class="botao"><a href="produto/deletarProduto.php?idProduto=<?=$linha["idProduto"]?>">Deletar</a></div>

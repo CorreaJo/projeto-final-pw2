@@ -42,14 +42,46 @@ $linha = mysqli_fetch_assoc($query)
             <p><?=$linha["descricao"]?></p>
             <form action="../../carrinho/processamentoCarrinho.php?idProduto=<?=$linha["idProduto"]?>" method="POST">
                 <select name="qtd" id="">
-                    <option value="1">1</option>
+                    <option value="" selected disabled>Selecione a Quantidade</option>
+                    <?php
+                        for($i=1; $i <= $linha["estoque"]; $i++){
+                            $estoque += 1;
+                            ?>
+                                <option value="<?=$estoque?>"><?=$estoque?></option>
+                            <?php
+                        }
+                    ?>
+                </select>
+                <select name="tamanho" id="">
+                    <option value="" selected disabled>Selecione o Tamanho</option>
+                    <?php
+                        for($i=36; $i <= 42; $i++){
+                            ?>
+                                <option value="<?=$i?>"><?=$i?></option>
+                            <?php
+                        }
+                    ?>
                 </select>
                 <input type="hidden" name="acao" value="adicionar">
                 <input type="hidden" name="imagem" value="<?=$linha["imagem"]?>">
                 <input type="hidden" name="nome" value="<?=$linha["nome"]?>">
                 <input type="hidden" name="cor" value="<?=$linha["cor"]?>">
                 <input type="hidden" name="categoria" value="<?=$linha["categoria"]?>">
-                <button>Comprar</button>
+                <?php
+                    if(isset($_SESSION["email"])){
+                        ?>
+                            <button>Comprar</button>
+                        <?php
+                    } else {
+                        ?>
+                            <div class="erro">
+                                <h2>Se cadastre para colocar o produto no carrinho</h2>
+                                <a href="../../usuario/cadastroUsuario.php">Cadastre-se</a>
+                            </div>
+                        <?php
+                    }
+                ?>
+                
             </form>
         </div>
     </section>

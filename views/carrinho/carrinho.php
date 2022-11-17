@@ -22,6 +22,12 @@
                 <div class="produtos">
                     <img src="<?=$value["imagem"]?>" alt="">
                     <h2><?=$value["nome"]?></h2>
+                    <h3><?=$value["cor"]?></h3>
+                    <h3><?=$value["qtd"]?></h3>
+                    <h3><?=$value["tamanho"]?></h3>
+                    <div>
+                        <a href="processamentoCarrinho.php?acao=deletar">Deletar</a>
+                    </div>
                 </div>
             <?php
         }

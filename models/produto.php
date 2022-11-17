@@ -1,7 +1,7 @@
 <?php
 
-function NovoProduto($nome, $cor, $desc, $categoria, $preco, $imagem){
-    $insert = "INSERT INTO produto (nome, cor, descricao, categoria, preco, imagem) VALUES ('$nome', '$cor', '$desc', '$categoria', '$preco', '$imagem')";
+function NovoProduto($nome, $cor, $desc, $categoria, $preco, $imagem, $estoque, $tamanho){
+    $insert = "INSERT INTO produto (nome, cor, descricao, categoria, preco, imagem, estoque, tamanho) VALUES ('$nome', '$cor', '$desc', '$categoria', '$preco', '$imagem', '$estoque', '$tamanho')";
     return $insert;
 }
 
@@ -20,7 +20,7 @@ function DeleteProduto($idProduto){
     return $delete;
 }
 
-function AtualizarProduto($nome, $cor, $desc, $categoria, $preco, $imagem, $idProduto){
-    $update = "UPDATE produto SET nome='$nome', cor='$cor', descricao='$desc', categoria='$categoria', preco='$preco', imagem='$imagem' WHERE idProduto='$idProduto'";
+function AtualizarProduto($nome, $cor, $desc, $categoria, $preco, $imagem, $estoque, $tamanho, $idProduto){
+    $update = "UPDATE produto SET nome='$nome', cor='$cor', descricao='$desc', categoria='$categoria', preco='$preco', imagem='$imagem', estoque='$estoque', tamanho='$tamanho' WHERE idProduto='$idProduto'";
     return $update;
 }

@@ -22,6 +22,8 @@ create table if not exists cordshoes.produto (
     categoria varchar(50) NULL DEFAULT NULL,
     imagem varchar(100) NULL DEFAULT NULL,
     preco decimal(9,2) NOT NULL,
+    estoque INT NOT NULL,
+    tamanho INT NOT NULL,
     primary key (idProduto)
 );
 
@@ -29,7 +31,7 @@ create table if not exists cordshoes.usuario (
 	idUsuario INT NOT NULL auto_increment,
     nome varchar(75) NOT NULL,
     endereco varchar(150) NOT NULL,
-    telefone varchar(15) NULL DEFAULT NULL,
+    telefone varchar(20) NULL DEFAULT NULL,
     email varchar(150) NULL DEFAULT NULL,
     cpf varchar(14) NOT NULL,
     sexo varchar(25) NULL default NULL,
