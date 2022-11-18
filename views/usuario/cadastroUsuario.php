@@ -33,7 +33,7 @@
                 <input type="file" name="imagem"><br>
             </div>
             <input type="hidden" name="cargo" value="cliente">
-            <button>Cadastrar</button>
+            <button class="botao">Cadastrar</button>
         </form>
     </div>
     </section>

@@ -10,9 +10,9 @@
     <header>
         <div id="cabecalho">
             <a href="../../../views/index.php"><img class="logo" src="../../../public/imagens/logo.png" alt=""></a>
-            <form action="../../../views/funcionario/produto/buscaProduto.php" method="get">
+            <form class="forms" action="../../../views/funcionario/produto/buscaProduto.php" method="get">
                 <input type="text" placeholder="Buscar produto" name="busca" class="pesquisar">
-                <button><img src="../../../public/imagens/lupa.png" class="lupa" alt=""></button>
+                <button class="botao-cabecalho"><img src="../../../public/imagens/lupa.png" class="lupa" alt=""></button>
             </form>
 
             <a class="link" href="../../../views/carrinho/carrinho.php"><img class="icone" src="../../../public/imagens/carrinhos-de-compras.png" alt=""></a>
