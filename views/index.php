@@ -28,7 +28,7 @@ $queryCategoria = mysqli_query(conexao(), ListarTudoCategoria());
             <?php
                 while($categoria = mysqli_fetch_assoc($queryCategoria)){
                     ?>
-                        <a href="#"><?=$categoria["nomeCategoria"]?></a>
+                        <a href="funcionario/produto/buscaProduto.php?busca=<?=$categoria["nomeCategoria"]?>"><?=$categoria["nomeCategoria"]?></a>
                     <?php
                 }
             ?>

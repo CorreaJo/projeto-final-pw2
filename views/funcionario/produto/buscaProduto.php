@@ -1,12 +1,21 @@
 <?php
 require "../../../conexao.php";
 require "../../../models/produto.php";
+require "../../../models/categoria.php";
+
+$con = conexao();
+$queryCategoria = mysqli_query(conexao(), ListarTudoCategoria());
 
 $busca = $_GET["busca"];
 
-$con = conexao();
+while($categoria = mysqli_fetch_assoc($queryCategoria)){
+    if($busca == $categoria["nomeCategoria"]){
+        $selectProduto = "SELECT * FROM produto WHERE categoria like'%$busca%'";
+    } else {
+        $selectProduto = "SELECT * FROM produto WHERE nome like'%$busca%'";
+    }
+}
 
-$selectProduto = "SELECT * FROM produto WHERE nome like'%$busca%'";
 $query = mysqli_query($con, $selectProduto);
 
 ?>

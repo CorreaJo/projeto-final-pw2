@@ -12,9 +12,8 @@
            </div>
            <div id="links">
                 <ul>
-                    <li><a href="cadastro-login.html">Login/Cadastro</a></li>
-                    <li><a href="carrinho.html">Carrinho</a></li>
-                    <li><a href="cadastro-produtos.html">Cadastro Produtos</a></li>
+                    <li><a href="../../../views/usuario/loginUsuario.php">Login/Cadastro</a></li>
+                    <li><a href="../../../views/carrinho/carrinho.php">Carrinho</a></li>
                 </ul>
            </div>
            <div id="sociais">
