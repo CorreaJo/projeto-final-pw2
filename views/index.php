@@ -34,7 +34,7 @@ $queryCategoria = mysqli_query(conexao(), ListarTudoCategoria());
             ?>
         </nav>
     </div>
-    <main>
+    <main class="main">
         <div id="banner">
             <h2>Lançamento</h2>
         </div>

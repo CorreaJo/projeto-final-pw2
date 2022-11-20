@@ -48,11 +48,11 @@ select {
     margin: 5px;
     width: 94%;
     border: 0 black solid;
-    padding: 5px;
     border-radius: 5px;
     font-weight: 600;
     font-size: 1.1em;
     color: #0D1B1E;
+    padding: 5px;
 }
 
 

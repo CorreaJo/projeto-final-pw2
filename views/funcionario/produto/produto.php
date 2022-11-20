@@ -21,25 +21,44 @@ $linha = mysqli_fetch_assoc($query)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?=$linha["nome"]?></title>
     <link rel="stylesheet" href="../../../public/css/produto.css">
+    <script src="../../../public/js/jquery-3.6.1.min.js"></script>
+    <script>
+        $('.head').click(function(){
+            $(this).toggleClass('active');
+            $(this).parent().find('.arrow').toggleClass('arrow-animate');
+            $(this).parent().find('.content').slideToggle(280);
+        });
+</script>
 </head>
 <body>
     <section>
         <div>
-            <img src="<?=$linha["imagem"]?>" alt="Imagem Principal do <?=$linha["nome"]?>">
+            <img class="imagem-produto" src="<?=$linha["imagem"]?>" alt="Imagem Principal do <?=$linha["nome"]?>">
             <?php
                 $inner = "SELECT caminho from produto po INNER JOIN imagens img ON po.idProduto = img.idProduto WHERE img.idProduto=".$linha["idProduto"];
                 $innerResul = mysqli_query(conexao(), $inner);
                 while($imagem = mysqli_fetch_assoc($innerResul)){
                     ?>
-                    <img src="<?=$imagem["caminho"]?>" alt="">
+                    <img class="imagens-produto" src="<?=$imagem["caminho"]?>" alt="">
                     <?php
                 }
             ?>
         </div>
         <div>
-            <h1>Nome do Produto: <?=$linha["nome"]?></h1>
-            <h3>Cor: <?=$linha["cor"]?></h3>
-            <p><?=$linha["descricao"]?></p>
+            <h1><?=$linha["nome"]?></h1>
+            <h3><?=$linha["cor"]?></h3>
+            <div id="accordion-1">
+    <div class="head">
+      <h2>1. Simple Accordion</h2>
+      <i class="fas fa-angle-down arrow"></i>
+    </div>
+    <div class="content">
+      <p>An accordion is used to show and hide content. It can be usually found in Q & A section.</p>
+    </div>
+  </div>
+            <div id="accordion">
+                <p ><?=$linha["descricao"]?></p>
+            </div>
             <form action="../../carrinho/processamentoCarrinho.php?idProduto=<?=$linha["idProduto"]?>" method="POST">
                 <select name="qtd" id="">
                     <option value="" selected disabled>Selecione a Quantidade</option>
@@ -67,6 +86,7 @@ $linha = mysqli_fetch_assoc($query)
                 <input type="hidden" name="nome" value="<?=$linha["nome"]?>">
                 <input type="hidden" name="cor" value="<?=$linha["cor"]?>">
                 <input type="hidden" name="categoria" value="<?=$linha["categoria"]?>">
+                <input type="hidden" name="preco" value="<?=$linha["preco"]?>">
                 <?php
                     if(isset($_SESSION["email"])){
                         ?>
@@ -75,8 +95,8 @@ $linha = mysqli_fetch_assoc($query)
                     } else {
                         ?>
                             <div class="erro">
-                                <h2>Se cadastre para colocar o produto no carrinho</h2>
-                                <a href="../../usuario/cadastroUsuario.php">Cadastre-se</a>
+                                <h2>Se cadastre ou faça login para colocar o produto no carrinho</h2>
+                                <a href="../../usuario/loginUsuario.php">Login/Cadastre-se</a>
                             </div>
                         <?php
                     }

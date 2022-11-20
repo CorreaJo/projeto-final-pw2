@@ -1,6 +1,93 @@
+@charset "UTF-8";
+
 * {
     margin: 0;
 }
+
+/* Modal Carrinho */
+
+.popup-car {
+    display: none;
+    position: absolute;
+    width: 450px;
+    border: 1px black;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: #222e36;
+    padding: 10px;
+    right: 0;
+    top: 16%;
+}
+
+#flecha {
+    margin-left: 400px;
+    margin-bottom: -50px;
+}
+
+#flecha:hover {
+    cursor: pointer;
+}
+
+#flecha img {
+    width: 40px;
+}
+
+.popup-car h1 {
+    text-align: center;
+    margin-top: 15px;
+    border-bottom: 2px solid white;
+    margin-bottom: 20px;
+}
+
+.nao-ha {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.link-produtos {
+    text-decoration: none;
+    color: #8dc6e7;
+    font-size: 1.3em;
+    transition: 0.4s;
+}
+
+.link-produtos:hover {
+    text-decoration: underline;
+}
+
+#borda {
+    border: 2px solid black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.produtos-modal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.produtos-modal img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.finalizar {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin: auto;
+    border-radius: 10px;
+    padding: 10px;
+    border: 0px black solid;
+    background-color: #0D1B1E;
+    font-size: 1.3em; 
+    color: whitesmoke;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Fim Modal Carrinho */
 
 #cabecalho {
     background-color: #6D99B3;
