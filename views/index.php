@@ -20,20 +20,11 @@ $queryCategoria = mysqli_query(conexao(), ListarTudoCategoria());
     <title>Home</title>
     <link rel="stylesheet" href="../public/css/index.css">
     <link rel="stylesheet" href="../public/css/cabecalho.css">
+    <link rel="shortcut icon" href="../public/imagens/logo.png" type="image/x-icon">
 </head>
 <body>
     <?php require "../components/cabecalho.php"?>
-    <div>
-        <nav>
-            <?php
-                while($categoria = mysqli_fetch_assoc($queryCategoria)){
-                    ?>
-                        <a href="funcionario/produto/buscaProduto.php?busca=<?=$categoria["nomeCategoria"]?>"><?=$categoria["nomeCategoria"]?></a>
-                    <?php
-                }
-            ?>
-        </nav>
-    </div>
+    <?php require "../components/categorias.php"?>
     <main class="main">
         <div id="banner">
             <h2>Lançamento</h2>

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-h1 {
+.titulo {
     text-align: center;
     color: #ff5656;
     margin-bottom: 25px;
@@ -12,6 +12,10 @@ h1 {
     border-top: 2px solid black;
 }
 
+#categorias {
+    margin: 15px;
+}
+
 .todos {
     font-size: 1.5em;
     margin-bottom: 15px;
@@ -21,12 +25,16 @@ h1 {
 }
 
 .cadastro {
-    font-size: 1.3em;
+    background-color: rgba(0, 0, 0, 0.808);
+    font-size: 1.4em;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
 }
 
 .cadastro:hover {
     text-decoration: underline;
-
 }
 
 .forne {
@@ -82,21 +90,33 @@ p {
     display: flex;
 }
 
-.botao {
-    margin-right: 10px;
-    padding: 10px;
+.botao, .atualizar {
+    text-align: center;
+    width: 80px;
+    padding: 5px 10px;
+    font-size: 1.2em;
+    font-weight: 600;
+    background-color: #49687a;
+    transition: 0.3s;
     border-radius: 10px;
-    border: 0px black solid;
-    background-color: #0D1B1E;
-    font-size: 1.3em; 
+    margin-left: 5px;
+}
+
+.botao a, .atualizar a {
+    text-decoration: none;
+    color: white;
+}
+
+.atualizar:hover {
+    background-color: blue;
+    text-decoration: underline;
     cursor: pointer;
-    color: whitesmoke;
-    transition: 0.4s;
 }
 
 .botao:hover {
-    background-color: #ff5656;
+    background-color: rgb(253, 28, 28);
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .acoes {
@@ -120,4 +140,14 @@ p {
 #fornecedores {
     margin: 15px;
     border-top: 2px solid black;
+}
+
+.categoria {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px black solid;
+    border-radius: 10px;
 }

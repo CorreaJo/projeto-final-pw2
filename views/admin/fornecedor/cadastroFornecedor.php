@@ -11,11 +11,15 @@
     <link rel="stylesheet" href="../../../public/css/forms.css">
 </head>
 <body>
-    <h1>Cadastro de Fornecedor</h1>
-    <form action="novoFornecedor.php" method="post">
-        <input type="text" name="nome" placeholder="Nome do Fornecedor">
-        <input type="text" name="cnpj" placeholder="CNPJ do Fornecedor">
-        <button>Cadastrar</button>
-    </form>
+    <section>
+        <div class="cadastro">
+            <h1>Cadastro de Fornecedor</h1>
+            <form action="novoFornecedor.php" method="post">
+                <input type="text" name="nome" placeholder="Nome do Fornecedor">
+                <input type="text" name="cnpj" placeholder="CNPJ do Fornecedor">
+                <button>Cadastrar</button>
+            </form>
+        </div>
+    </section>
 </body>
 </html>

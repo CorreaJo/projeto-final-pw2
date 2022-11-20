@@ -10,6 +10,7 @@ $categoria = $_POST["categoria"];
 $cor = $_POST["cor"];
 $tamanho = $_POST["tamanho"];
 $preco = $_POST["preco"];
+$preco = floatval($preco);
 
 $preco = number_format($preco, 2, ',', '.');
 
@@ -21,8 +22,9 @@ if(!isset($_SESSION["carrinho"])){
 
 // adiciona o produto no carrinho
 
-if(isset($acao) == "adicionar"){
+if($acao == "adicionar"){
     if(!isset($_SESSION["carrinho"][$idProduto])){
+        $_SESSION["carrinho"][$idProduto]["idProduto"] = $idProduto;
         $_SESSION["carrinho"][$idProduto]["qtd"] = $qtd;
         $_SESSION["carrinho"][$idProduto]["nome"] = $nome;
         $_SESSION["carrinho"][$idProduto]["imagem"] = $imagem;
@@ -35,12 +37,9 @@ if(isset($acao) == "adicionar"){
         echo "Produto já está no carrinho!";
     }
     header("location: carrinho.php");
-}
-
-// deleta o produto do carrinho 
-
-if(isset($acao) == "deletar"){
-    if(isset($_SESSION["carrinho"][$idProduto][$qtd])){
+} else if($acao == "deletar"){
+    if(isset($_SESSION["carrinho"][$idProduto])){
+        $_SESSION["carrinho"][$idProduto]["idProduto"] = $idProduto;
         $_SESSION["carrinho"][$idProduto]["qtd"] = $qtd;
         $_SESSION["carrinho"][$idProduto]["nome"] = $nome;
         $_SESSION["carrinho"][$idProduto]["imagem"] = $imagem;
@@ -49,7 +48,12 @@ if(isset($acao) == "deletar"){
         $_SESSION["carrinho"][$idProduto]["categoria"] = $categoria;
         $_SESSION["carrinho"][$idProduto]["preco"] = $preco;
     }
+    
+} else {
     header("location: carrinho.php");
 }
+
+// deleta o produto do carrinho 
+
 
 ?>

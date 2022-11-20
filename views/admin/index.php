@@ -30,11 +30,11 @@ if($_SESSION["cargo"] == "administrador"){
         <link rel="stylesheet" href="../../public/css/adm.css">
     </head>
     <body>
-        <h1>Dashboard Administrador</h1>
+        <h1 class="titulo">Dashboard Administrador</h1>
         <section>
             <div id="empregados">
                 <h2 class="todos">Todos os Funcionarios Cadastrados</h2>
-                <a class="cadastro" href="empregados/cadastroEmpregado.php">Cadastrar Empregados</a>
+                <a class="cadastro" href="../usuario/cadastroUsuario.php">Cadastrar Empregados</a>
                 <?php
                     if(mysqli_num_rows($resulEmpregados) <= 0){
                         ?>
@@ -62,7 +62,7 @@ if($_SESSION["cargo"] == "administrador"){
                                             </div>
                                             <div class="botoes">
                                                 <div class="botao"><a href="../../views/usuario/deletarUsuario.php?idUsuario=<?=$linhaEmpregados["idUsuario"]?>">Deletar</a></div>
-                                                <div class="botao">
+                                                <div class="atualizar">
                                                     <a href="../../views/usuario/updateFormUsuario.php?idUsuario=<?=$linhaEmpregados["idUsuario"]?>">Atualizar</a>
                                                 </div>
                                             </div>
@@ -94,9 +94,13 @@ if($_SESSION["cargo"] == "administrador"){
                                                 <h2 class="nome"><?=$linhaForne["nomeFornecedor"]?></h2>
                                                 <div class="acoes">
                                                     <p>CNPJ: <?=$linhaForne["CNPJ"]?></p>
-                                                    <div>
-                                                        <a class="botao" href="fornecedor/deletarFornecedor.php?idFornecedor=<?=$linhaForne["idFornecedor"]?>">Deletar</a>
-                                                        <a class="botao" href="fornecedor/UpdateFormFornecedor.php?idFornecedor=<?=$linhaForne["idFornecedor"]?>">Atualizar</a>
+                                                    <div class="botoes">
+                                                        <div class="botao">
+                                                            <a href="fornecedor/deletarFornecedor.php?idFornecedor=<?=$linhaForne["idFornecedor"]?>">Deletar</a>
+                                                        </div>
+                                                        <div class="atualizar">
+                                                            <a  href="fornecedor/UpdateFormFornecedor.php?idFornecedor=<?=$linhaForne["idFornecedor"]?>">Atualizar</a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -135,9 +139,13 @@ if($_SESSION["cargo"] == "administrador"){
                                             <p>CPF: <?=$linhaUsuario["cpf"]?></p>       
                                             <p>Telefone: <?=$linhaUsuario["telefone"]?></p>
                                         </div>
-                                        <div>
-                                            <a class="botao" id="deletar" href="../../views/usuario/deletarUsuario.php?idUsuario=<?=$linhaUsuario["idUsuario"]?>">Deletar</a>
-                                            <a class="botao" id="atualizar" href="../../views/usuario/updateFormUsuario.php?idUsuario=<?=$linhaUsuario["idUsuario"]?>">Atualizar</a>
+                                        <div class="botoes">
+                                            <div class="botao">
+                                                <a href="../../views/usuario/deletarUsuario.php?idUsuario=<?=$linhaUsuario["idUsuario"]?>">Deletar</a>
+                                            </div>
+                                            <div class="atualizar">
+                                                <a href="../../views/usuario/updateFormUsuario.php?idUsuario=<?=$linhaUsuario["idUsuario"]?>">Atualizar</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -150,6 +158,7 @@ if($_SESSION["cargo"] == "administrador"){
                 ?>
             </div>
         </section>
+        <?php require "../../components/rodape.php"?>
     </body>
     </html>
     <?php

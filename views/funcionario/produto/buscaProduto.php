@@ -32,8 +32,20 @@ $query = mysqli_query($con, $selectProduto);
 </head>
 <body>
     <?php require "../../../components/cabecalho.php"?>
+    <?php require "../../../components/categorias.php"?>
     <div id="produtos">
-            <h2 class="titulo">Encontramos alguns resultados:</h2>
+            <?php
+                if($query->num_rows > 0){
+                    ?>
+                        <h2 class="titulo">Encontramos alguns resultados:</h2>
+                    <?php
+                } else {
+                    ?>
+                        <h2 class="titulo">Não foi encontrado nenhum resultado</h2>
+                    <?php
+                }
+            ?>
+            
             <div class="produtos">
                 <?php
                     while($produto = mysqli_fetch_assoc($query)){
@@ -52,5 +64,6 @@ $query = mysqli_query($con, $selectProduto);
                 ?>
             </div>
         </div>
+        <?php require "../../../components/rodape.php"?>
 </body>
 </html>

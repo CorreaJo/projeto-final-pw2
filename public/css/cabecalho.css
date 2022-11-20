@@ -74,6 +74,7 @@
 }
 
 .finalizar {
+    width: 150px;
     margin-top: 15px;
     margin-bottom: 10px;
     margin: auto;
@@ -81,10 +82,19 @@
     padding: 10px;
     border: 0px black solid;
     background-color: #0D1B1E;
-    font-size: 1.3em; 
-    color: whitesmoke;
     text-align: center;
+
+}
+
+.finalizar a {
+    color: white;
+    font-size: 1.3em;
     text-decoration: none;
+}
+
+.finalizar:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 /* Fim Modal Carrinho */
@@ -100,19 +110,6 @@
 
 .logo {
     width: 175px;
-}
-
-nav {
-    background-color: #597c91;
-    padding: 20px;
-    display: flex;
-    justify-content: space-around;
-}
-
-nav a {
-    text-decoration: none;
-    color: white;
-    font-size: 35px;
 }
 
 .imagem {

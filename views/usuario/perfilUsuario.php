@@ -40,5 +40,6 @@ $linha = mysqli_fetch_assoc($resul);
             </div>
         </div>
     </main>
+    <?php require "../../components/rodape.php"?>
 </body>
 </html>

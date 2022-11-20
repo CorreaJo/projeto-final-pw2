@@ -30,7 +30,7 @@ if($_SESSION["cargo"] == "funcionario"){
     <body>
     <div id="cadastrados">
             <h1>Produtos Cadastrados</h1>
-            <h2 class="novo"><a href="produto/novoProduto.php">Cadastrar Novo produto</a></h2>
+            <a class="cadastro" href="produto/novoProduto.php">Cadastrar Novo produto</a>
             <div id="borda"></div>
             <div class="nomes">
                 <div></div>
@@ -64,6 +64,7 @@ if($_SESSION["cargo"] == "funcionario"){
         </div>
     </body>
     </html>
+    <?php require "../../components/rodape.php"?>
     <?php
 } else {
     header("location: ../");

@@ -10,13 +10,18 @@ if($_SESSION["cargo"] == "gerente"){
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Nova Categoria</title>
+        <link rel="stylesheet" href="../../../public/css/forms.css">
     </head>
     <body>
-        <h1>Nova Categoria</h1>
-        <form action="novaCategoria.php" method="post">
-            <input type="text" name="nomeCategoria">
-            <button>Cadastrar</button>
-        </form>
+        <section>
+            <div class="cadastro">
+                <h1>Nova Categoria</h1>
+                <form action="novaCategoria.php" method="post">
+                    <input type="text" name="nomeCategoria" placeholder="Nome da Categoria">
+                    <button>Cadastrar</button>
+                </form>
+            </div>
+        </section>
     </body>
     </html>
 

@@ -12,30 +12,30 @@
 </head>
 <body>
     <section>
-    <div class="cadastro">
-        <h1>Cadastre-se</h1>
-        <form action="novoUsuario.php" method="POST" enctype="multipart/form-data">
-            <input type="text"  name="nome" placeholder="Nome"><br>
-            <input type="text" name="cpf" id="cpf" placeholder="CPF" maxlength="25" minlength="11"><br>
-            <input type="text" name="telefone" id="telefone" placeholder="Digite um número de telefone" maxlength="15" /><br>
-            <input type="text" name="endereco" placeholder="Endereço"><br>
-            <select name="sexo">
-                <option value="" selected disabled>SEXO</option>
-                <option value="feminino">Feminino</option>
-                <option value="masculino">Masculino</option>
-                <option value="naobinario">Não Binário</option>
-                <option value="outro">Outro</option>
-            </select><br>
-            <input type="email" name="email" placeholder="Email"><br>
-            <input type="password" name="senha" maxlength="10" placeholder="Senha"><br>
-            <div class="upload">
-                <img src="../../public/imagens/upload-na-nuvem.png" alt="">
-                <input type="file" name="imagem"><br>
-            </div>
-            <input type="hidden" name="cargo" value="cliente">
-            <button class="botao">Cadastrar</button>
-        </form>
-    </div>
+        <div class="cadastro">
+            <h1>Cadastre-se</h1>
+            <form action="novoUsuario.php" method="POST" enctype="multipart/form-data">
+                <input type="text"  name="nome" placeholder="Nome"><br>
+                <input type="text" name="cpf" id="cpf" placeholder="CPF" maxlength="25" minlength="11"><br>
+                <input type="text" name="telefone" id="telefone" placeholder="Digite um número de telefone" maxlength="15" /><br>
+                <input type="text" name="endereco" placeholder="Endereço"><br>
+                <select name="sexo">
+                    <option value="" selected disabled>SEXO</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="naobinario">Não Binário</option>
+                    <option value="outro">Outro</option>
+                </select><br>
+                <input type="email" name="email" placeholder="Email"><br>
+                <input type="password" name="senha" maxlength="10" placeholder="Senha"><br>
+                <div class="upload">
+                    <img src="../../public/imagens/upload-na-nuvem.png" alt="">
+                    <input type="file" name="imagem"><br>
+                </div>
+                <input type="hidden" name="cargo" value="cliente">
+                <button class="botao">Cadastrar</button>
+            </form>
+        </div>
     </section>
 </body>
 </html>

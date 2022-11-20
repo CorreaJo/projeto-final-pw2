@@ -47,18 +47,7 @@ $linha = mysqli_fetch_assoc($query)
         <div>
             <h1><?=$linha["nome"]?></h1>
             <h3><?=$linha["cor"]?></h3>
-            <div id="accordion-1">
-    <div class="head">
-      <h2>1. Simple Accordion</h2>
-      <i class="fas fa-angle-down arrow"></i>
-    </div>
-    <div class="content">
-      <p>An accordion is used to show and hide content. It can be usually found in Q & A section.</p>
-    </div>
-  </div>
-            <div id="accordion">
-                <p ><?=$linha["descricao"]?></p>
-            </div>
+            <p ><?=$linha["descricao"]?></p>
             <form action="../../carrinho/processamentoCarrinho.php?idProduto=<?=$linha["idProduto"]?>" method="POST">
                 <select name="qtd" id="">
                     <option value="" selected disabled>Selecione a Quantidade</option>
@@ -105,5 +94,6 @@ $linha = mysqli_fetch_assoc($query)
             </form>
         </div>
     </section>
+    <?php require "../../../components/rodape.php"?>
 </body>
 </html>

@@ -24,31 +24,42 @@ if($_SESSION["cargo"] == "gerente"){
         <title>Categorias</title>
     </head>
     <body>
-        <h1>Categorias</h1>
-        <h2><a href="categoria/cadastroCategoria.php">Nova Categoria</a></h2>
-        <table border="1">
-            <th>Nome</th>
-            <th>Ações</th>
+        <div id="categorias">
+            <h2 class="todos">Categorias</h2>
+            <a class="cadastro" href="categoria/cadastroCategoria.php">Nova Categoria</a>
             <?php
-                while($linha = mysqli_fetch_assoc($resul)){
+                if(mysqli_num_rows($resul) <= 0){
                     ?>
-                <tr>
-                    <td>
-                        <?=$linha["nomeCategoria"]?>
-                    </td>
-                    <td>
-                        <a href="categoria/UpdateFormCategoria.php?idCategoria=<?=$linha["idCategoria"]?>">Atualizar</a>
-                        <a href="categoria/deletarCategoria.php?idCategoria=<?=$linha["idCategoria"]?>">Deletar</a>
-                    </td>
-                </tr>
+                        <h2 class="naoHa">Não há categoria cadastrada</h2>
+                    <?php
+                } else {
+                    ?>
+                    <div class="funcionarios">
+                        <?php
+                            while($linha = mysqli_fetch_assoc($resul)){
+                                ?>
+                                    <div class="caixa">
+                                        <div class="categoria">
+                                            <div>
+                                                <h2 class="nome"><?=$linha["nomeCategoria"]?></h2>
+                                            </div>
+                                            <div class="botoes">
+                                                <div class="botao"><a href="categoria/deletarCategoria.php">Deletar</a></div>
+                                                <div class="atualizar"><a href="categoria/UpdateFormCategoria.php">Atualizar</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php
+                            }
+                        ?>
+                    </div>
                     <?php
                 }
-    
             ?>
-        </table>
+        </div>
         <div id="empregados">
                 <h2 class="todos">Todos os Funcionarios Cadastrados</h2>
-                <a class="cadastro" href="empregados/cadastroEmpregado.php">Cadastrar Empregados</a>
+                <a class="cadastro" href="../usuario/cadastroUsuario.php">Cadastrar Empregados</a>
                 <?php
                     if(mysqli_num_rows($resulEmpregados) <= 0){
                         ?>
@@ -74,9 +85,14 @@ if($_SESSION["cargo"] == "gerente"){
                                                 <p>CPF: <?=$linhaEmpregados["cpf"]?></p>       
                                                 <p>Telefone: <?=$linhaEmpregados["telefone"]?></p>
                                             </div>
-                                            <div>
-                                            <a class="botao" href="../../views/usuario/deletarUsuario.php?idUsuario=<?=$linhaEmpregados["idUsuario"]?>">Deletar</a>
-                                            <a class="botao" href="../../views/usuario/updateFormUsuario.php?idUsuario=<?=$linhaEmpregados["idUsuario"]?>">Atualizar</a>
+                                            <div class="botoes">
+                                                <div class="botao">
+                                                    <a href="../../views/usuario/deletarUsuario.php?idUsuario=<?=$linhaEmpregados["idUsuario"]?>">Deletar</a>
+                                                </div>
+                                            
+                                                <div class="atualizar">
+                                                    <a href="../../views/usuario/updateFormUsuario.php?idUsuario=<?=$linhaEmpregados["idUsuario"]?>">Atualizar</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -88,6 +104,7 @@ if($_SESSION["cargo"] == "gerente"){
                     }
                 ?>
             </div>
+            <?php require "../../components/rodape.php"?>
     </body>
     </html>
     <?php

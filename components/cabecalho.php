@@ -57,7 +57,9 @@
                             <?php
                         }
                         ?>
-                        <a href="../../../views/pedido/finalizar-pedido.php"><div class="finalizar">Finalizar Pedido</div></a>
+                        <div class="finalizar">
+                            <a href="../../../views/pedido/finalizar-pedido.php">Finalizar Pedido</a>
+                        </div>
                         <?php
                     } else {
                         ?>

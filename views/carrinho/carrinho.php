@@ -26,7 +26,17 @@
                     <h3><?=$value["qtd"]?></h3>
                     <h3><?=$value["tamanho"]?></h3>
                     <div>
-                        <a href="processamentoCarrinho.php?acao=deletar">Deletar</a>
+                        <form action="processamentoCarrinho.php?idProduto=<?=$value["idProduto"]?>" method="POST">
+                            <input type="hidden" name="qtd" value="<?=$value["qtd"]?>">
+                            <input type="hidden" name="nome" value="<?=$value["nome"]?>">
+                            <input type="hidden" name="imagem" value="<?=$value["imagem"]?>">
+                            <input type="hidden" name="tamanho" value="<?=$value["tamanho"]?>">
+                            <input type="hidden" name="cor" value="<?=$value["cor"]?>">
+                            <input type="hidden" name="categoria" value="<?=$value["categoria"]?>">
+                            <input type="hidden" name="preco" value="<?=$value["preco"]?>">
+                            <input type="hidden" name="acao" value="deletar">
+                            <button>Deletar</button>
+                        </form>
                     </div>
                 </div>
             <?php
