@@ -15,6 +15,7 @@ if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha'])
     if(mysqli_num_rows($resul) < 1){
         unset($_SESSION["email"]);
         unset($_SESSION["senha"]);
+        $_SESSION["erro"] = "Email ou senha inválida";
         header("location: loginUsuario.php");
     } else {
         $_SESSION["email"] = $email;
@@ -30,6 +31,7 @@ if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['senha'])
     }
    
 } else {
+    $_SESSION["erro"] = "Email ou senha inválida";
     header("location: loginUsuario.php");
 }
 

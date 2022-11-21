@@ -11,6 +11,12 @@
     <script src="../../public/js/mask.js"></script>
 </head>
 <body>
+    <?php
+        if(isset($_SESSION["erro"])){
+            require "../../components/erro.php";
+            unset($_SESSION["erro"]);
+        }
+    ?>
     <section>
         <div class="cadastro">
             <h1>Cadastre-se</h1>

@@ -1,3 +1,5 @@
+<?php session_start() ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,6 +13,12 @@
     <section>
         <div class="cadastro login">
             <h1>Login</h1>
+            <?php
+                if(isset($_SESSION["erro"])){
+                    require "../../components/erro.php";
+                    unset($_SESSION["erro"]);
+                }
+            ?>
             <form action="testeUsuario.php" method="post">
                 <input type="text" name="email" placeholder="Email">
                 <input type="password" name="senha" placeholder="Senha">

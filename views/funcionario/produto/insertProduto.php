@@ -46,8 +46,10 @@ foreach($_FILES['imagem']['name'] as $key=>$val){
 
 if($queryProduto) {
    ?>
-        <h2>Cadastro feito com sucesso!</h2>
-        <a href="../index.php">Ver usuarios</a>
+        <script>
+            alert("O produto: <?=$nome?> foi inserido com sucesso!")
+            window.location.href="../index.php";   
+        </script>
    <?php
 } else {
    echo mysqli_error($con);

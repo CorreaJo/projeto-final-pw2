@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require "../../conexao.php";
 require "../../models/usuario.php";
@@ -33,5 +34,8 @@ $query = mysqli_query($con, $insert) or die(mysqli_error($con));
 
 if($query) {
    header("location: loginUsuario.php");
+} else {
+   $_SESSION["erro"] = "Complete o cadastro corretamente.";
+   header("location: cadastroUsuario.php");
 }
 ?>
