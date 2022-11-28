@@ -29,7 +29,6 @@ if($imagem['name'] != ""){
 $con = conexao();
 $insert = NovoProduto($nome, $cor, $desc, $categoria, $preco, $to, $estoque, $tamanho);
 
-
 $queryProduto = mysqli_query($con, $insert);
 $idProduto = mysqli_insert_id($con);
 

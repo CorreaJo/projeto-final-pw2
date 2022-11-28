@@ -11,7 +11,6 @@
     display: flex;
     margin: 20px;
     justify-content: space-around;
-    max-width: 1200px;
     padding: 15px;
     border-radius: 15px;
     margin: auto;
@@ -25,7 +24,7 @@
     display: flex;
     border: 1px black solid;
     border-radius: 10px;
-    width: 600px;
+    width: 50vw;
     align-items: center;
     margin-bottom: 10px;
     background-color: #6D89B3;
