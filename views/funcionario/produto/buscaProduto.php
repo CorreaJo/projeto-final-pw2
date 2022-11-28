@@ -3,20 +3,21 @@ require "../../../conexao.php";
 require "../../../models/produto.php";
 require "../../../models/categoria.php";
 
-$con = conexao();
 $queryCategoria = mysqli_query(conexao(), ListarTudoCategoria());
+
+require "../../../components/cabecalho.php";
+require "../../../components/categorias.php";
+
 
 $busca = $_GET["busca"];
 
-while($categoria = mysqli_fetch_assoc($queryCategoria)){
-    if($busca == $categoria["nomeCategoria"]){
-        $selectProduto = "SELECT * FROM produto WHERE categoria like'%$busca%'";
-    } else {
-        $selectProduto = "SELECT * FROM produto WHERE nome like'%$busca%'";
-    }
+if($busca == $nomeCategoria){
+    $selectProduto = "SELECT * FROM produto WHERE categoria like'%$busca%'";
+} else {
+    $selectProduto = "SELECT * FROM produto WHERE nome like'%$busca%'";
 }
 
-$query = mysqli_query($con, $selectProduto);
+$query = mysqli_query(conexao(), $selectProduto);
 
 ?>
 
@@ -31,8 +32,6 @@ $query = mysqli_query($con, $selectProduto);
     <link rel="stylesheet" href="../../../public/css/buscaProduto.css">
 </head>
 <body>
-    <?php require "../../../components/cabecalho.php"?>
-    <?php require "../../../components/categorias.php"?>
     <div id="produtos">
             <?php
                 if($query->num_rows > 0){

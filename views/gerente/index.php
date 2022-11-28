@@ -24,6 +24,12 @@ if($_SESSION["cargo"] == "gerente"){
         <title>Categorias</title>
     </head>
     <body>
+        <?php
+            if(isset($_SESSION["certo"])){
+                require "../../components/acerto.php";
+                unset($_SESSION["certo"]);
+            }
+        ?>
         <div id="categorias">
             <h2 class="todos">Categorias</h2>
             <a class="cadastro" href="categoria/cadastroCategoria.php">Nova Categoria</a>

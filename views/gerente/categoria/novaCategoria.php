@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require "../../../conexao.php";
 require "../../../models/categoria.php";
@@ -10,7 +11,8 @@ $insert = NovaCategoria($nomeCategoria);
 $query = mysqli_query($con, $insert);
 
 if($query){
-    echo "Deu certo a inserção";
+    $_SESSION["certo"] = "Categoria inserida com sucesso!";
+    header("location: ../index.php");
 } else {
     echo mysqli_error($con);
 }

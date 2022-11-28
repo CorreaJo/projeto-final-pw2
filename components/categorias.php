@@ -17,6 +17,7 @@
     <nav>
         <?php
             while($categoria = mysqli_fetch_assoc($queryCategoria)){
+                $nomeCategoria = $categoria["nomeCategoria"];
                 ?>
                     <a href="funcionario/produto/buscaProduto.php?busca=<?=$categoria["nomeCategoria"]?>"><?=$categoria["nomeCategoria"]?></a>
                 <?php
