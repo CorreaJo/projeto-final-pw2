@@ -29,6 +29,12 @@ if($_SESSION["cargo"] == "funcionario"){
     </head>
     <body>
     <div id="cadastrados">
+        <?php
+            if(isset($_SESSION["certo"])){
+                require "../../components/acerto.php";
+                unset($_SESSION["certo"]);
+            }
+        ?>
             <h1>Produtos Cadastrados</h1>
             <a class="cadastro" href="produto/novoProduto.php">Cadastrar Novo produto</a>
             <div id="borda"></div>

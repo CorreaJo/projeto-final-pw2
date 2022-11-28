@@ -90,8 +90,10 @@ $totalValor = 0;
     <?php
     } else {
         ?>
+        <div class="erro">
             <h2>Não há produtos no carrinho</h2>
             <a href="../funcionario/produto/buscaProduto.php?busca=' '">Ver Produtos</a>
+        </div>    
         <?php
     }
     ?>

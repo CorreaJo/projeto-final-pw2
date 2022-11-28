@@ -37,7 +37,7 @@ $queryCategoria = mysqli_query(conexao(), ListarTudoCategoria());
                         $preco = number_format($produto["preco"], 2, ',', '.');
                         ?>
                             <div class="produto">
-                                <img src="<?=$produto["imagem"]?>" alt="">
+                                <img src="<?=$produto["imagem"]?>" alt="Imagem Produto">
                                 <div>
                                     <h2><?=$produto["nome"]?></h2>
                                     <h3>R$<?=$preco?></h3>

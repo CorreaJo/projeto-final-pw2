@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 
 require "../../../conexao.php";
 require "../../../models/produto.php";
@@ -12,12 +14,8 @@ $query = mysqli_query($con, $deleteImagens);
 $query = mysqli_query($con, $delete);
 
 if($query) {
-   ?>
-   <script>
-        alert('Deletado com sucesso!')
-        window.location.href='../index.php';
-   </script>
-   <?php
+   $_SESSION["certo"] = "Exclusão feita com sucesso!";
+   header("location: ../index.php");
 } else {
    echo mysqli_error($con);
 }

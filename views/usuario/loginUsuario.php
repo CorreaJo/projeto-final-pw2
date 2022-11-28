@@ -18,6 +18,11 @@
                     require "../../components/erro.php";
                     unset($_SESSION["erro"]);
                 }
+
+                if(isset($_SESSION["certo"])){
+                    require "../../components/acerto.php";
+                    unset($_SESSION["certo"]);
+                }
             ?>
             <form action="testeUsuario.php" method="post">
                 <input type="text" name="email" placeholder="Email">

@@ -36,7 +36,8 @@
                 <input type="password" name="senha" maxlength="10" placeholder="Senha"><br>
                 <div class="upload">
                     <img src="../../public/imagens/upload-na-nuvem.png" alt="">
-                    <input type="file" name="imagem"><br>
+                    <label for="imagem">Insira sua imagem</label>
+                    <input type="file" name="imagem" id="imagem"><br>
                 </div>
                 <input type="hidden" name="cargo" value="cliente">
                 <button class="botao">Cadastrar</button>

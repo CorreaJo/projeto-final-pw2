@@ -1,5 +1,5 @@
 <?php
-require "../../../components/cabecalho.php";
+session_start();
 
 if($_SESSION["cargo"] == "gerente"){
     ?>

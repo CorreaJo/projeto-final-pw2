@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 
 require "../../../conexao.php";
 require "../../../models/produto.php";
@@ -45,14 +47,9 @@ foreach($_FILES['imagem']['name'] as $key=>$val){
 
 
 if($queryProduto) {
-   ?>
-        <script>
-            alert("O produto: <?=$nome?> foi inserido com sucesso!")
-            window.location.href="../index.php";   
-        </script>
-   <?php
+   $_SESSION["certo"] = "O produto ". $nome. "<br> foi inserido com sucesso";
+   header("location: ../index.php");
 } else {
    echo mysqli_error($con);
-   echo "erro";
 }
 ?>

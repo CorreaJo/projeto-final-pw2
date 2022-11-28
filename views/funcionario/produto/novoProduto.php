@@ -1,5 +1,5 @@
 <?php
-require "../../../components/cabecalho.php";
+session_start();
 require "../../../conexao.php";
 
 if($_SESSION["cargo"] == "funcionario"){
@@ -58,13 +58,13 @@ if($_SESSION["cargo"] == "funcionario"){
                         <img src="../../../public/imagens/upload-na-nuvem.png" alt="">
                         <br>
                         <label for="principal">Insira a imagem principal</label>
-                        <input type="file" name="principal">
+                        <input type="file" name="principal" id="principal">
                     </div>
                     <div class="upload">
                         <img src="../../../public/imagens/upload-na-nuvem.png" alt="">
                         <br>
                         <label for="imagem">Insira as imagens secundárias</label>
-                        <input type="file" name="imagem[]" multiple="multiple">
+                        <input type="file" name="imagem[]" multiple="multiple" id="imagem">
                     </div>
                     <button class="botao">Cadastrar Produto</button>
                 </form>

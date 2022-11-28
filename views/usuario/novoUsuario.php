@@ -33,6 +33,7 @@ $insert = NovoUsuario($nome, $endereco, $tel, $email, $cpf, $sexo, $senha, $img,
 $query = mysqli_query($con, $insert) or die(mysqli_error($con));
 
 if($query) {
+   $_SESSION["certo"] = "Cadastro realizado com sucesso!";
    header("location: loginUsuario.php");
 } else {
    $_SESSION["erro"] = "Complete o cadastro corretamente.";
