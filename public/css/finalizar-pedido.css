@@ -23,11 +23,10 @@ body {
     display: flex;
     flex-direction: column;
     width: 400px;
-    background-color: rgba(0, 0, 255, 0.527);
     padding: 10px;
     border-radius: 10px;
     height: 650px;
-    background-color: #C3DBC5;
+    background-color: #85a8dc;
 }
 
 form h2 {
@@ -55,8 +54,20 @@ input::placeholder {
     font-weight: 600;
 }
 
+.produtos {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #85a8dc;
+}
+
+.produtos h2 {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
 .finalizar-produto {
-    background-color: #6D89B3;
+    background-color: #4d617e;
     width: 25vw;
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -65,7 +76,7 @@ input::placeholder {
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 10px;
-    
+    color: white;
 }
 
 .finalizar-produto img {
@@ -73,6 +84,11 @@ input::placeholder {
     grid-row: span 2;
     border-radius: 10px;
     margin-right: 10px;
+}
+
+.valorTotal {
+    margin-bottom: 15px;
+    margin-top: 20px;
 }
 
 .botao-finalizar {

@@ -23,33 +23,46 @@ $linha = mysqli_fetch_assoc($query)
     <link rel="stylesheet" href="../../../public/css/produto.css">
     <script src="../../../public/js/jquery-3.6.1.min.js"></script>
     <script>
-        $('.head').click(function(){
-            $(this).toggleClass('active');
-            $(this).parent().find('.arrow').toggleClass('arrow-animate');
-            $(this).parent().find('.content').slideToggle(280);
+        $(document).ready(function(){
+            $('.img-responsive').on( "click", function() {
+                $(this).animate({
+                    width:'300px',
+                    height:'300px'
+                    },1000);
+                });
+
+            $('.img-responsive').mouseout(function() {
+                $(this).animate({
+                    width:'150px',
+                    height:'150px'
+                    },1000);
+                });
+
         });
-</script>
+    </script>
 </head>
 <body>
     <section>
-        <div>
+        <div class="imagens">
             <img class="imagem-produto" src="<?=$linha["imagem"]?>" alt="Imagem Principal do <?=$linha["nome"]?>">
+            <div class="imagens-sec">
             <?php
                 $inner = "SELECT caminho from produto po INNER JOIN imagens img ON po.idProduto = img.idProduto WHERE img.idProduto=".$linha["idProduto"];
                 $innerResul = mysqli_query(conexao(), $inner);
                 while($imagem = mysqli_fetch_assoc($innerResul)){
                     ?>
-                    <img class="imagens-produto" src="<?=$imagem["caminho"]?>" alt="">
+                        <img class="imagens-produto img-responsive" src="<?=$imagem["caminho"]?>" alt="">
                     <?php
                 }
             ?>
+            </div>
         </div>
-        <div>
+        <div class="info">
             <h1><?=$linha["nome"]?></h1>
-            <h3><?=$linha["cor"]?></h3>
-            <p ><?=$linha["descricao"]?></p>
+            <h3>Cor do Tênis: <?=$linha["cor"]?></h3>
+            
             <form action="../../carrinho/processamentoCarrinho.php?idProduto=<?=$linha["idProduto"]?>" method="POST">
-                <select name="qtd" id="">
+                <select name="qtd" class="qtd">
                     <option value="" selected disabled>Selecione a Quantidade</option>
                     <?php
                         for($i=1; $i <= $linha["estoque"]; $i++){
@@ -60,7 +73,7 @@ $linha = mysqli_fetch_assoc($query)
                         }
                     ?>
                 </select>
-                <select name="tamanho" id="">
+                <select name="tamanho" class="qtd">
                     <option value="" selected disabled>Selecione o Tamanho</option>
                     <?php
                         for($i=36; $i <= 42; $i++){
@@ -79,7 +92,10 @@ $linha = mysqli_fetch_assoc($query)
                 <?php
                     if(isset($_SESSION["email"])){
                         ?>
-                            <button>Comprar</button>
+                        <div>
+                            <button class="botao">Adicionar ao Carrinho</button>
+                        </div>
+                            
                         <?php
                     } else {
                         ?>
@@ -94,6 +110,10 @@ $linha = mysqli_fetch_assoc($query)
             </form>
         </div>
     </section>
+    <div class="descricao">
+            <h3>Descrição:</h3>
+            <p><?=$linha["descricao"]?></p>
+    </div>
     <?php require "../../../components/rodape.php"?>
 </body>
 </html>

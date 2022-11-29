@@ -41,7 +41,7 @@ $queryCategoria = mysqli_query(conexao(), ListarTudoCategoria());
                                 <div>
                                     <h2><?=$produto["nome"]?></h2>
                                     <h3>R$<?=$preco?></h3>
-                                    <a href="funcionario/produto/produto.php?idProduto=<?=$produto["idProduto"]?>">Ver Produto </a>
+                                    <a href="funcionario/produto/produto.php?idProduto=<?=$produto["idProduto"]?>">Ver Produto</a>
                                 </div>
                             </div>
                         <?php

@@ -34,12 +34,13 @@ $totalValor = 0;
                         <label for="email">Email</label>
                         <input type="text" value="<?=$_SESSION["email"]?>" id="email">
                         <label for="entrega">Entrega</label>
-                        <input type="text" name="entrega" id="entrega">
+                        <input type="text" name="entrega" id="entrega" placeholder="Endereço para entrega">
                         <label for="cep">Cep:</label>
-                        <input type="text" name="cep" id="cep">
+                        <input type="text" name="cep" id="cep" placeholder="Cep da Rua">
                     </form> 
                 </div>
-                <div>
+                <div class="produtos">
+                    <h2>Pedido</h2>
                     <?php
                     foreach($_SESSION["carrinho"] as $key => $value){
                         $nome = $value["nome"];
@@ -48,7 +49,7 @@ $totalValor = 0;
                             <div class="finalizar-produto">
                                 <img class="" src="<?=$value["imagem"]?>" alt="">
                                 <h2><?=$nomeProduto?></h2>
-                                <h3>R$<?=$value["preco"]?> x <?=$value["qtd"]?></h3>
+                                <h3>Preço ---------------------- R$<?=$value["preco"]?> x <?=$value["qtd"]?></h3>
                             </div>
                         <?php
                         $qtd = intval($value["qtd"]);
@@ -57,13 +58,12 @@ $totalValor = 0;
                         $valorTotal = number_format($totalValor, 2, ",", "");
                     }
                     ?>
+                    <h3 class="valorTotal">Valor Total ---------------------------------------------------- <?=$valorTotal?></h3>
                     <div class="botao-finalizar">
                         <a href="processamentoEstoque.php">Finalizar Pedido</a>
                     </div>
                 </div>
             </div>
-        
-        <h3>Total: <?=$valorTotal?></h3>
         <?php
     } else {
         ?>
