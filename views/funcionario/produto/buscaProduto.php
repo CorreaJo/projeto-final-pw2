@@ -6,15 +6,15 @@ require "../../../models/categoria.php";
 $queryCategoria = mysqli_query(conexao(), ListarTudoCategoria());
 
 require "../../../components/cabecalho.php";
-require "../../../components/categorias.php";
 
 
 $busca = $_GET["busca"];
-
-if($busca == $nomeCategoria){
-    $selectProduto = "SELECT * FROM produto WHERE categoria like'%$busca%'";
-} else {
-    $selectProduto = "SELECT * FROM produto WHERE nome like'%$busca%'";
+while($categoria = mysqli_fetch_assoc($queryCategoria)){
+    if($busca == $categoria){
+        $selectProduto = "SELECT * FROM produto WHERE categoria like'%$busca%'";
+    } else {
+        $selectProduto = "SELECT * FROM produto WHERE nome like'%$busca%'";
+    }
 }
 
 $query = mysqli_query(conexao(), $selectProduto);

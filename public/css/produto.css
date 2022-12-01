@@ -32,6 +32,7 @@ section {
 
 .info {
   width: 50vw;
+  margin-left: 30px;
 }
 
 .info h1 {
