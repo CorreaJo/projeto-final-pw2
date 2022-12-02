@@ -28,15 +28,53 @@ $linha = mysqli_fetch_assoc($resul);
 <body>
     <main>
         <h1 id="ola">Olá <strong><?=ucfirst($linha["nome"])?></strong></h1>
-        <div id="usuario">
-            <img id="img" src="<?=$linha["imagem"]?>" alt="<?=$linha["nome"]?>">
-            <div class="info">
-                <p class="label">Nome:</p>
-                <h2 class="nome"><?=ucfirst($linha["nome"])?></h2>
-                <p class="label">Endereço:</p>
-                <h2 class="nome"><?=$linha["endereco"]?></h2>
-                <p class="label">Email:</p>
-                <h2 class="nome"><?=$linha["email"]?></h2>
+        <div class="cartao">
+            <div id="usuario">
+                <?php
+                    if(isset($_SESSION["certo"])){
+                        require "../../components/acerto.php";
+                        ?>
+                            <script>
+                                $(document).ready(function() {
+                                    setTimeout(function(){
+                                        $(".certo").animate({
+                                            height: 'toggle'
+                                        });
+                                    }, 3000);
+                                });
+                            </script>
+                        <?php
+                        unset($_SESSION["certo"]);
+                    }
+            
+                    if(isset($_SESSION["erro"])){
+                        require "../../components/erro.php";
+                        ?>
+                            <script>
+                                $(document).ready(function() {
+                                    setTimeout(function(){
+                                        $(".certo").animate({
+                                            height: 'toggle'
+                                        });
+                                    }, 3000);
+                                });
+                            </script>
+                        <?php
+                        unset($_SESSION["erro"]);
+                    }
+                ?>
+                <img id="img" src="<?=$linha["imagem"]?>" alt="<?=$linha["nome"]?>">
+                <div class="info">
+                    <p class="label">Nome:</p>
+                    <h2 class="nome"><?=ucfirst($linha["nome"])?></h2>
+                    <p class="label">Endereço:</p>
+                    <h2 class="nome"><?=$linha["endereco"]?></h2>
+                    <p class="label">Email:</p>
+                    <h2 class="nome"><?=$linha["email"]?></h2>
+                </div>
+            </div>
+            <div class="atualizarSenha">
+                <a href="formSenhaUsuario.php?idUsuario=<?=$linha["idUsuario"]?>">Atualizar Senha</a>
             </div>
         </div>
     </main>

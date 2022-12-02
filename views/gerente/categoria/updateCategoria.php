@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 require "../../../conexao.php";
 require "../../../models/categoria.php";
@@ -9,9 +9,11 @@ $idCategoria = $_POST["idCategoria"];
 
 $resul = mysqli_query(conexao(), AtualizarCategoria($nomeCategoria, $idCategoria));
 if($resul){
-    echo "Atualizado com sucesso";
+    $_SESSION["certo"] = "$nomeCategoria inserida com sucesso!";
+    header("location: ../index.php");
 } else {
-    echo mysqli_error($con);
+    $_SESSION["erro"] = "Erro na atualização da categoria!";
+    header("location: ../index.php");
 }
 
 ?>

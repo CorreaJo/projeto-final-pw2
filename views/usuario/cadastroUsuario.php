@@ -14,6 +14,17 @@
     <?php
         if(isset($_SESSION["erro"])){
             require "../../components/erro.php";
+            ?>
+                <script>
+                    $(document).ready(function() {
+                        setTimeout(function(){ 
+                            $(".certo").animate({
+                                height: 'toggle'
+                            });
+                        }, 3000);
+                    });
+                </script>
+            <?php
             unset($_SESSION["erro"]);
         }
     ?>

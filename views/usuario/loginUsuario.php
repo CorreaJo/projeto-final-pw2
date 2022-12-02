@@ -14,16 +14,38 @@
         <div class="cadastro login">
             <h1>Login</h1>
             <?php
-                if(isset($_SESSION["erro"])){
-                    require "../../components/erro.php";
-                    unset($_SESSION["erro"]);
-                }
-
-                if(isset($_SESSION["certo"])){
-                    require "../../components/acerto.php";
-                    unset($_SESSION["certo"]);
-                }
-            ?>
+            if(isset($_SESSION["certo"])){
+                require "../../components/acerto.php";
+                ?>
+                    <script>
+                        $(document).ready(function() {
+                            setTimeout(function(){ 
+                                $(".certo").animate({
+                                    height: 'toggle'
+                                });
+                            }, 3000);
+                        });
+                    </script>
+                <?php
+                unset($_SESSION["certo"]);
+            }
+            
+            if(isset($_SESSION["erro"])){
+                require "../../components/erro.php";
+                ?>
+                    <script>
+                        $(document).ready(function() {
+                            setTimeout(function(){ 
+                                $(".erro").animate({
+                                    height: 'toggle'
+                                });
+                            }, 3000);
+                        });
+                    </script>
+                <?php
+                unset($_SESSION["erro"]);
+            }
+        ?>
             <form action="testeUsuario.php" method="post">
                 <input type="text" name="email" placeholder="Email">
                 <input type="password" name="senha" placeholder="Senha">

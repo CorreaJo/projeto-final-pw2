@@ -27,7 +27,34 @@ if($_SESSION["cargo"] == "gerente"){
         <?php
             if(isset($_SESSION["certo"])){
                 require "../../components/acerto.php";
+                ?>
+                    <script>
+                        $(document).ready(function() {
+                            setTimeout(function(){ 
+                                $(".certo").animate({
+                                    height: 'toggle'
+                                });
+                            }, 3000);
+                        });
+                    </script>
+                <?php
                 unset($_SESSION["certo"]);
+            }
+            
+            if(isset($_SESSION["erro"])){
+                require "../../components/erro.php";
+                ?>
+                    <script>
+                        $(document).ready(function() {
+                            setTimeout(function(){ 
+                                $(".erro").animate({
+                                    height: 'toggle'
+                                });
+                            }, 3000);
+                        });
+                    </script>
+                <?php
+                unset($_SESSION["erro"]);
             }
         ?>
         <div id="categorias">

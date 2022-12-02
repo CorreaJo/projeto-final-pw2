@@ -16,7 +16,7 @@
             <h1>Cadastro de Fornecedor</h1>
             <form action="novoFornecedor.php" method="post">
                 <input type="text" name="nome" placeholder="Nome do Fornecedor">
-                <input type="text" name="cnpj" placeholder="CNPJ do Fornecedor">
+                <input type="text" id="cnpj" maxlength="18" name="cnpj" placeholder="CNPJ do Fornecedor">
                 <button>Cadastrar</button>
             </form>
         </div>

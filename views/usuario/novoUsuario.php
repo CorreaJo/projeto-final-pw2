@@ -30,7 +30,7 @@ $img = $to;
 $con = conexao();
 $insert = NovoUsuario($nome, $endereco, $tel, $email, $cpf, $sexo, $senha, $img, $cargo);
 
-$query = mysqli_query($con, $insert) or die(mysqli_error($con));
+$query = mysqli_query($con, $insert);
 
 if($query) {
    $_SESSION["certo"] = "Cadastro realizado com sucesso!";

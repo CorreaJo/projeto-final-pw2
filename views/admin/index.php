@@ -33,6 +33,39 @@ if($_SESSION["cargo"] == "administrador"){
         <h1 class="titulo">Dashboard Administrador</h1>
         <section>
             <div id="empregados">
+            <?php
+                if(isset($_SESSION["certo"])){
+                    require "../../components/acerto.php";
+                    ?>
+                        <script>
+                            $(document).ready(function() {
+                                setTimeout(function(){ 
+                                    $(".certo").animate({
+                                        height: 'toggle'
+                                    });
+                                }, 3000);
+                            });
+                        </script>
+                    <?php
+                    unset($_SESSION["certo"]);
+                } 
+                
+                if(isset($_SESSION["erro"])){
+                    require "../../components/erro.php";
+                    ?>
+                        <script>
+                            $(document).ready(function() {
+                                setTimeout(function(){ 
+                                    $(".erro").animate({
+                                        height: 'toggle'
+                                    });
+                                }, 3000);
+                            });
+                        </script>
+                    <?php
+                    unset($_SESSION["erro"]);
+                }
+            ?> 
                 <h2 class="todos">Todos os Funcionarios Cadastrados</h2>
                 <a class="cadastro" href="../usuario/cadastroUsuario.php">Cadastrar Empregados</a>
                 <?php

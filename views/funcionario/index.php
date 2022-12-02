@@ -26,13 +26,41 @@ if($_SESSION["cargo"] == "funcionario"){
         <title>Todos os Produtos</title>
         <link rel="stylesheet" href="../../../public/css/cabecalho.css">
         <link rel="stylesheet" href="../../../public/css/dashboardFunc.css">
+        <script src="../../public/js/jquery-3.6.1.min.js"></script>
     </head>
     <body>
     <div id="cadastrados">
         <?php
             if(isset($_SESSION["certo"])){
                 require "../../components/acerto.php";
+                ?>
+                    <script>
+                        $(document).ready(function() {
+                            setTimeout(function(){ 
+                                $(".certo").animate({
+                                    height: 'toggle'
+                                });
+                            }, 3000);
+                        });
+                    </script>
+                <?php
                 unset($_SESSION["certo"]);
+            } 
+            
+            if(isset($_SESSION["erro"])){
+                require "../../components/erro.php";
+                ?>
+                    <script>
+                        $(document).ready(function() {
+                            setTimeout(function(){ 
+                                $(".erro").animate({
+                                    height: 'toggle'
+                                });
+                            }, 3000);
+                        });
+                    </script>
+                <?php
+                unset($_SESSION["erro"]);
             }
         ?>
             <h1>Produtos Cadastrados</h1>

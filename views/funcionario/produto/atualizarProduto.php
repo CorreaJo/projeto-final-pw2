@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require "../../../conexao.php";
 require "../../../models/produto.php";
@@ -6,13 +7,26 @@ require "../../../models/produto.php";
 $nome = $_POST["nome"];
 $cor = $_POST["cor"];
 $desc = $_POST["descricao"];
-$imagens = array_filter($_FILES['imagem']);
 $categoria = $_POST["categoria"];
 $preco = $_POST["preco"];
+$estoque = $_POST["estoque"];
+$tamanho = $_POST["tamanho"];
+$imagem = $_FILES["principal"];
+$imagens = array_filter($_FILES['imagem']);
 $idProduto = $_POST["idProduto"];
 
+if($imagem['name'] != ""){
+   $to = "../../../public/imagens/".$imagem['name'];
+   $from = $imagem["tmp_name"];
+
+   move_uploaded_file($from, $to);
+} else {
+   $to = "../../../public/imagens/sem-foto.png";
+   $from = $imagem["tmp_name"];
+}
+
 $con = conexao();
-$update = AtualizarProduto($nome, $cor, $desc, $categoria, $preco, $idProduto);
+$update = AtualizarProduto($nome, $cor, $desc, $categoria, $preco, $to, $estoque, $tamanho, $idProduto);
 
 foreach($_FILES['imagem']['name'] as $key=>$val){ 
    $fileName = $_FILES['imagem']['name'][$key];
@@ -20,19 +34,19 @@ foreach($_FILES['imagem']['name'] as $key=>$val){
    $to = "../../../public/imagens/".$fileName;
    move_uploaded_file($fileTMP, $to);
 
-   $updateImagens = "UPDATE imagens set caminho='$to' where idProduto='$idProduto'";
+   $insertImagens = "INSERT INTO imagens (caminho, idProduto) VALUES ('$to', '$idProduto')";
 
-   $queryImagens = mysqli_query($con, $updateImagens);
+   $queryImagens = mysqli_query($con, $insertImagens);
 }
+
 
 $query = mysqli_query($con, $update);
 
 if($query) {
-   ?>
-        <h2>Atualizado com sucesso!</h2>
-        <a href="../index.php">Ver produtos</a>
-   <?php
+   $_SESSION["certo"] = "$nome atualizado com sucesso!";
+   header("location: ../index.php");
 } else {
-   echo mysqli_error($con);
+   $_SESSION["erro"] = "Erro na atualização do produto!";
+   header("location: ../index.php");
 }
 ?>

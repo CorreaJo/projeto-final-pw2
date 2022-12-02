@@ -9,7 +9,7 @@
         background-color: #008000;
         border-radius: 10px;
         text-align: center;
-        transition: 0.5s;
+        width: 350px;
     }
 
     .certo h2 {

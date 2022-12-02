@@ -28,17 +28,19 @@ main {
     text-align: center;
 }
 
+.cartao {
+    width: 1200px;
+    padding: 50px;
+    margin: auto;
+    background-color: #4b6879;
+    border-radius: 10px;
+    margin-top: 5%;
+}
 
 #usuario {
     display: flex;
     align-items: center;
-    width: 1200px;
     justify-content: space-around;
-    padding: 50px;
-    margin: auto;
-    background-color: rgb(61, 61, 61);
-    border-radius: 10px;
-    margin-top: 5%;
 }
 .info {
     width: 600px;
@@ -50,4 +52,25 @@ main {
     color: white;
     margin-top: 10px;
     font-size: 1.6em;
+}
+
+.atualizarSenha {
+    background-color: #0D1B1E;
+    width: 200px;
+    margin: auto;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 35px;
+    text-align: center;
+}
+
+.atualizarSenha a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.4em;
+}
+
+.atualizarSenha:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }

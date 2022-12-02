@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require "../../../conexao.php";
 require "../../../models/fornecedor.php";
@@ -10,10 +11,11 @@ $delete = DeleteFornecedor($idFornecedor);
 
 $query = mysqli_query($con, $delete);
 
-if($query) {
-   ?>
-        <h2>Deletado com sucesso!</h2>
-        <a href="../">Ver Fornecedores</a>
-   <?php
+if($query){
+   $_SESSION["certo"] = "Fornecedor excluído com sucesso!";
+   header("location: ../index.php");
+} else {
+   $_SESSION["erro"] = "Erro na exclusão do fornecedor!";
+   header("location: ../index.php");
 }
 ?>

@@ -14,7 +14,8 @@ if($query){
     $_SESSION["certo"] = "Categoria inserida com sucesso!";
     header("location: ../index.php");
 } else {
-    echo mysqli_error($con);
+    $_SESSION["erro"] = "Erro na inserção da categoria!";
+    header("location: ../index.php");
 }
 
 ?>

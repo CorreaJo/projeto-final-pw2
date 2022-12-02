@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require "../../../conexao.php";
 require "../../../models/empregados.php";
@@ -12,10 +13,11 @@ $update = UpdateFornecedor($nome, $cnpj, $idFornecedor);
 
 $query = mysqli_query($con, $update);
 
-if($query) {
-   ?>
-        <h2>Atualizado com sucesso!</h2>
-        <a href="../">Ver Fornecedores</a>
-   <?php
+if($query){
+   $_SESSION["certo"] = "$nome atualizado com sucesso!";
+   header("location: ../index.php");
+} else {
+   $_SESSION["erro"] = "Erro na atualização do fornecedor!";
+   header("location: ../index.php");
 }
 ?>

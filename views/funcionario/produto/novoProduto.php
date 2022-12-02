@@ -22,11 +22,11 @@ if($_SESSION["cargo"] == "funcionario"){
                     <select name="cor" id="">
                         <option value="" selected disabled>Selecionar a Cor</option>
                         <option value="azul">Azul</option>
-                        <option value="azul">Verde</option>
-                        <option value="azul">Vermelho</option>
-                        <option value="azul">Preto</option>
-                        <option value="azul">Branco</option>
-                        <option value="azul">Amarelo</option>
+                        <option value="verde">Verde</option>
+                        <option value="vermelho">Vermelho</option>
+                        <option value="preto">Preto</option>
+                        <option value="Branco">Branco</option>
+                        <option value="Amarelo">Amarelo</option>
                     </select>
                     <select name="categoria" id="">
                         <option value="" selected disabled>Selecionar Categoria</option>

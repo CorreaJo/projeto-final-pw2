@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require "../../../conexao.php";
 require "../../../models/fornecedor.php";
@@ -12,11 +13,12 @@ $insert = NovoFornecedor($nome, $cnpj);
 
 $query = mysqli_query($con, $insert) or die(mysqli_error($con));
 
-if($query) {
-   ?>
-        <h2>Cadastro feito com sucesso!</h2>
-        <a href="../">Ver Fornecedores</a>
-   <?php
+if($query){
+   $_SESSION["certo"] = "$nome inserido com sucesso!";
+   header("location: ../index.php");
+} else {
+   $_SESSION["erro"] = "Erro na inserção do fornecedor!";
+   header("location: ../index.php");
 }
 
 ?>

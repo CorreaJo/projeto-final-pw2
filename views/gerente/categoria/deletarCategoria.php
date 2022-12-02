@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require "../../../conexao.php";
 require "../../../models/categoria.php";
@@ -10,10 +11,11 @@ $delete = DeletarCategoria($idCategoria);
 $query = mysqli_query($con, $delete);
 
 if($query){
-    echo "Deletado com sucesso";
+    $_SESSION["certo"] = "Categoria excluída com sucesso!";
+    header("location: ../index.php");
 } else {
-    echo mysqli_error($con);
+    $_SESSION["erro"] = "Erro na exclusão da categoria!";
+    header("location: ../index.php");
 }
-
 
 ?>
