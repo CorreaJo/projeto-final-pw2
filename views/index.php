@@ -1,4 +1,5 @@
 <?php
+require "../components/cabecalho.php";
 
 require "../conexao.php";
 require "../models/produto.php";
@@ -19,35 +20,31 @@ $queryCategoria = mysqli_query(conexao(), ListarTudoCategoria());
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="../public/css/index.css">
-    <link rel="stylesheet" href="../public/css/cabecalho.css">
-    <link rel="shortcut icon" href="../public/imagens/logo.png" type="image/x-icon">
     <script type="text/javascript">
         function slide1(){
-        document.getElementById('imagem').src="../public/imagens/forum-adidas.webp";
+        document.getElementById('imagem').src="../public/imagens/nike luis vitton.png";
         setTimeout("slide2()", 3000)
-        document.getElementById('link').href="link1.html"
+        document.getElementById('link').href="#"
         }
 
         function slide2(){
-        document.getElementById('imagem').src="../public/imagens/forum-adidas2.webp";
+        document.getElementById('imagem').src="../public/imagens/adidias-banner.png";
         setTimeout("slide3()", 3000)
-        document.getElementById('link').href="link2.html"
+        document.getElementById('link').href="#"
         }
 
         function slide3(){
-        document.getElementById('imagem').src="../public/imagens/forum-adidas3.webp";
+        document.getElementById('imagem').src="../public/imagens/jordan-banner.png";
         setTimeout("slide1()", 3000)
-        document.getElementById('link').href="link3.html"
+        document.getElementById('link').href="#"
         }
     </script>
 
 </head>
 <body onLoad="slide1()">
-    <?php require "../components/cabecalho.php"?>
     <?php require "../components/categorias.php"?>
     <main class="main">
         <div id="banner">
-            <h2>Lançamentos</h2>
             <div class="carrossel">
                 <a id="link"><img id="imagem"></a>
             </div>
@@ -75,7 +72,7 @@ $queryCategoria = mysqli_query(conexao(), ListarTudoCategoria());
         <div id="seja-membro">
             <h2>Faça parte do nosso cartão fidelidade</h2>
             <div class="chamada">
-                    <img src="../public/imagens/tenis2.jpg" alt="">
+                    <img src="../public/imagens/cartao-fidelidade.png" alt="">
                     <div>
                         <h4>Com o nosso cartão fidelidade você pode ganhar muitos benefícios, como:</h4>
                         <ul>
