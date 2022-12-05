@@ -21,7 +21,7 @@ if($imagem['name'] != ""){
    // caminho Hospedagem
    $caminho = "/home2/cordwe98/repositories/projeto-final-pw2/public/imagens/".$imagem['name'];
    // caminho local 
-   // $caminho = "C:/Users/A8-9600/Desktop/workspace/projeto-final-pw2/public/imagens/".$imagem['name']; 
+   //$caminho = "C:/Users/A8-9600/Desktop/workspace/projeto-final-pw2/public/imagens/".$imagem['name']; 
    
    $to = $caminho;
    $from = $imagem["tmp_name"];
@@ -31,8 +31,12 @@ if($imagem['name'] != ""){
    $to = "../../../public/imagens/sem-foto.png";
    $from = $imagem["tmp_name"];
 }
+//caminho hospedagem
 
-$img = "../../../public/imagens/".$imagem["name"];
+$img = "/home2/cordwe98/repositories/projeto-final-pw2/public/imagens/".$imagem["name"];
+
+//caminho local
+//$img = "../../../public/imagens/".$imagem["name"];
 
 $con = conexao();
 $insert = NovoUsuario($nome, $endereco, $tel, $email, $cpf, $sexo, $senha, $img, $cargo);
