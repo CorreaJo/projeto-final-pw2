@@ -25,6 +25,14 @@ if($imagem['name'] != ""){
    
    $to = $caminho;
    $from = $imagem["tmp_name"];
+   
+   if(move_uploaded_file($from, $to)){
+      echo "Deu certo";
+   } else {
+      echo "nao deu";
+   }
+
+   die();
 } else {
    $to = "../../../public/imagens/sem-foto.png";
    $from = $imagem["tmp_name"];
