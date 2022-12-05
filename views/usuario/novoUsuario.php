@@ -19,7 +19,7 @@ $imagem = $_FILES["imagem"];
 
 if($imagem['name'] != ""){
    // caminho Hospedagem
-   $caminho = "/repositories/projeto-final-pw2/public/imagens/".$imagem['name'];
+   $caminho = "https://br762.hostgator.com.br:2083/cpsess0659272403/frontend/paper_lantern/filemanager/index.html?dir=%2Fhome2%2Fcordwe98%2Frepositories%2Fprojeto-final-pw2/public/imagens/".$imagem['name'];
    // caminho local 
    // $caminho = "C:/Users/A8-9600/Desktop/workspace/projeto-final-pw2/public/imagens/".$imagem['name']; 
    
