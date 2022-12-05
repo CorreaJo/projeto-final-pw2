@@ -94,7 +94,7 @@
                 if(isset($_SESSION["email"])) {
                     ?>
                     <div id="user">
-                        <a class="link" href="../../../views/usuario/perfilUsuario.php"><img src="../<?=$_SESSION["imagem"]?>" alt="" class="imagem"></a>
+                        <a class="link" href="../../../views/usuario/perfilUsuario.php"><img src="<?=$_SESSION["imagem"]?>" alt="" class="imagem"></a>
                         <a class="link" href="../../../views/usuario/sairUsuario.php"><img class="sair" src="../../../public/imagens/logout.png" alt=""></a>                      
                     </div>
                     <?php

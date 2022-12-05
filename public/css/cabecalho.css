@@ -119,9 +119,9 @@ body {
 }
 
 .imagem {
-    height: 50px;
-    width: 50px;
+    width: 150px;
     margin-right: 10px;
+    border-radius: 15px;
 }
 
 .sair {

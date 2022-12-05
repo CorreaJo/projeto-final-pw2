@@ -19,7 +19,7 @@ $imagem = $_FILES["imagem"];
 
 if($imagem['name'] != ""){
    // caminho Hospedagem
-   $caminho = "https://pw2.cordweb.com.br/public/imagens/".$imagem['name'];
+   $caminho = "/home2/cordwe98/pw2.cordweb.com.br/public/imagens/".$imagem['name'];
    // caminho local 
    //$caminho = "C:/Users/A8-9600/Desktop/workspace/projeto-final-pw2/public/imagens/".$imagem['name']; 
    
