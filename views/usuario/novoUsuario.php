@@ -32,7 +32,7 @@ if($imagem['name'] != ""){
    $from = $imagem["tmp_name"];
 }
 
-$img = $to;
+$img = "../../../public/imagens/".$imagem["name"];
 
 $con = conexao();
 $insert = NovoUsuario($nome, $endereco, $tel, $email, $cpf, $sexo, $senha, $img, $cargo);
