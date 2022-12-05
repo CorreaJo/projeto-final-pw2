@@ -19,7 +19,7 @@ $imagem = $_FILES["imagem"];
 
 if($imagem['name'] != ""){
    // caminho Hospedagem
-   $caminho = "/home2/cordwe98/repositories/projeto-final-pw2/public/imagens/".$imagem['name'];
+   $caminho = "pw2.cordweb.com.br/public/imagens/".$imagem['name'];
    // caminho local 
    //$caminho = "C:/Users/A8-9600/Desktop/workspace/projeto-final-pw2/public/imagens/".$imagem['name']; 
    
@@ -33,7 +33,7 @@ if($imagem['name'] != ""){
 }
 //caminho hospedagem
 
-$img = "/home2/cordwe98/repositories/projeto-final-pw2/public/imagens/".$imagem["name"];
+$img = "pw2.cordweb.com.br/public/imagens/".$imagem["name"];
 
 //caminho local
 //$img = "../../../public/imagens/".$imagem["name"];
