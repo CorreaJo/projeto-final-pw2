@@ -15,13 +15,11 @@ $senha = $_POST["senha"];
 $cargo = $_POST["cargo"];
 $imagem = $_FILES["imagem"];
 
-echo "<pre>";
-print_r($imagem);
 
 
 if($imagem['name'] != ""){
    // caminho Hospedagem
-   $caminho = "https://pw2.cordweb.com.br/public/imagens/".$imagem['name'];
+   $caminho = "/repositories/projeto-final-pw2/public/imagens/".$imagem['name'];
    // caminho local 
    // $caminho = "C:/Users/A8-9600/Desktop/workspace/projeto-final-pw2/public/imagens/".$imagem['name']; 
    
