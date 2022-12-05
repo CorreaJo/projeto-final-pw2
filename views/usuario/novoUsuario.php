@@ -15,11 +15,18 @@ $senha = $_POST["senha"];
 $cargo = $_POST["cargo"];
 $imagem = $_FILES["imagem"];
 
-if($imagem['name'] != ""){
-   $to = "../../../public/imagens/".$imagem['name'];
-   $from = $imagem["tmp_name"];
+echo "<pre>";
+print_r($imagem);
 
-   move_uploaded_file($from, $to);
+
+if($imagem['name'] != ""){
+   // caminho Hospedagem
+   $caminho = "https://pw2.cordweb.com.br/public/imagens/".$imagem['name'];
+   // caminho local 
+   // $caminho = "C:/Users/A8-9600/Desktop/workspace/projeto-final-pw2/public/imagens/".$imagem['name']; 
+   
+   $to = $caminho;
+   $from = $imagem["tmp_name"];
 } else {
    $to = "../../../public/imagens/sem-foto.png";
    $from = $imagem["tmp_name"];
